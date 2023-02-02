@@ -1,7 +1,6 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { MegaMenuItem } from 'primeng/api';
-import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +11,7 @@ export class AppComponent implements OnInit {
 
   items: MegaMenuItem[] = [];
 
-  constructor(
-    private primengConfig: PrimeNGConfig,
-    private themeService: ThemeService,
-  ) { }
+  constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit() {
     this.primengConfig.ripple = true;

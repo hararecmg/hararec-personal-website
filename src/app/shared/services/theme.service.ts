@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
 import { Injectable, Inject, Renderer2, RendererFactory2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +30,4 @@ export class ThemeService {
   private getBrowserTheme(): string {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
-
 }
