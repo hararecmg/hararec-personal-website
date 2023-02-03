@@ -1,0 +1,199 @@
+@use './variables';
+
+// Variables
+// --font-size-base: 16px;
+// --line-height-base: 1.5;
+// --font-family-base: "Open Sans", sans-serif;
+// --color-text: #1cd0e4;
+// --color-link: #007bff;
+// --color-link-hover: darken(--color-link, 15%);
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  font-family: var(--text-font), sans-serif;
+  color: var(--alabaster);
+}
+
+body {
+  font-family: var(--text-font), sans-serif;
+  font-weight: 400;
+  line-height: var(--line-height-base);
+  transition: background-color 0.2s ease-in-out;
+}
+
+a {
+  color: var(--navy-blue);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--navy-blue-darken);
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+// Formularios
+input,
+textarea,
+select,
+button {
+  font-size: var(--font-size-base);
+  font-family: var(--secondary-font);
+}
+
+input,
+textarea {
+  border: 1px solid #ced4da;
+  padding: .375rem .75rem;
+
+  &:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(128, 189, 255, 0.25);
+  }
+}
+
+button {
+  padding: .375rem .75rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    background-color: darken(#007bff, 10%);
+  }
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--primary-font), serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: var(--secondary-font), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.mobile {
+  font-size: 16px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+}
+
+.tablet {
+  font-size: 18px;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.7rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+
+}
+
+.web {
+  font-size: 20px;
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 2.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  :root {
+    scroll-behavior: smooth
+  }
+}
