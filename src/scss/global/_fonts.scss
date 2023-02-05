@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "Crimson Text";
+    src: url("../../assets/fonts/Crimson_Text/CrimsonText-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Crimson Text";
+    src: url("../../assets/fonts/Crimson_Text/CrimsonText-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../assets/fonts/Montserrat/static/Montserrat-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../assets/fonts/Montserrat/static/Montserrat-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("../../assets/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("../../assets/fonts/Playfair_Display/static/PlayfairDisplay-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+:root {
+    --primary-font: "Crimson Text";
+    --secondary-font: "Playfair Display";
+    --text-font: "Montserrat";
+    --line-height-base: 1.5;
+}
+
+html {
+    line-height: var(--line-height-base);
+    font-family: var(--text-font), sans-serif;
+    font-weight: 400;
+}

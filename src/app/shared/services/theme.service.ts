@@ -1,5 +1,6 @@
 import { Injectable, Inject, Renderer2, RendererFactory2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class ThemeService {
   private renderer: Renderer2;
 
   constructor(
+    private mediaMatcher: MediaMatcher,
     private rendererFactory: RendererFactory2,
     @Inject(DOCUMENT) private document: Document
   ) {
@@ -23,11 +25,11 @@ export class ThemeService {
 
   private setTheme(theme: string) {
     this.theme = theme;
-    this.renderer.setAttribute(this.document.body, 'data-theme', this.theme);
+    this.renderer.setAttribute(this.document.documentElement, 'data-theme', this.theme);
     localStorage.setItem('theme', this.theme);
   }
 
   private getBrowserTheme(): string {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return this.mediaMatcher.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 }
