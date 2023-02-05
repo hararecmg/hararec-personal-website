@@ -28,19 +28,12 @@
             "assets": [
               "src/favicon.ico",
               "src/assets/icons",
-              "src/assets/fonts/Crimson_Text/CrimsonText-Regular.ttf",
-              "src/assets/fonts/Crimson_Text/CrimsonText-Italic.ttf",
-              "src/assets/fonts/Montserrat/static/Montserrat-Regular.ttf",
-              "src/assets/fonts/Montserrat/static/Montserrat-Italic.ttf",
-              "src/assets/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf",
-              "src/assets/fonts/Playfair_Display/static/PlayfairDisplay-Italic.ttf",
               "src/manifest.json",
               "src/humans.txt"
             ],
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
-              "node_modules/primeng/resources/themes/lara-dark-purple/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/normalize.css/normalize.css"
             ],
@@ -103,19 +96,12 @@
             "assets": [
               "src/favicon.ico",
               "src/assets/icons",
-              "src/assets/fonts/Crimson_Text/CrimsonText-Regular.ttf",
-              "src/assets/fonts/Crimson_Text/CrimsonText-Italic.ttf",
-              "src/assets/fonts/Montserrat/static/Montserrat-Regular.ttf",
-              "src/assets/fonts/Montserrat/static/Montserrat-Italic.ttf",
-              "src/assets/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf",
-              "src/assets/fonts/Playfair_Display/static/PlayfairDisplay-Italic.ttf",
               "src/manifest.json",
               "src/humans.txt"
             ],
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
-              "node_modules/primeng/resources/themes/lara-dark-purple/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/normalize.css/normalize.css"
             ],
