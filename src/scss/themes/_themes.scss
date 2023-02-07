@@ -1,0 +1,47 @@
+@mixin theme-variables($name, $value) {
+    --#{$name}: var(--#{$value});
+    --#{$name}-darken: darken(var(--#{$value}), 20%);
+    --#{$name}-lighten: lighten(var(--#{$value}), 20%);
+    --#{$name}-desaturate: desaturate(lighten(var(--#{$value}), 20%), 20%);
+}
+
+$dark-mode: (
+    ("primary-color", "jet-black"),
+    ("secondary-color", "slate-grey"),
+    ("accent-color", "snow"),
+    ("highlight-color", "alabaster"),
+);
+
+$light-mode: (
+    ("primary-color", "snow"),
+    ("secondary-color", "alabaster"),
+    ("accent-color", "jet-black"),
+    ("highlight-color", "slate-grey"),
+);
+
+:root {
+    &[data-theme="light"] {
+        // color-scheme: light;
+
+        @each $color in $light-mode {
+            @include theme-variables(nth($color, 1), nth($color, 2));
+        }
+    }
+
+    &[data-theme="dark"] {
+        // color-scheme: dark;
+
+        @each $color in $dark-mode {
+            @include theme-variables(nth($color, 1), nth($color, 2));
+        }
+    }
+}
+
+html {
+    color: var(--accent-color);
+}
+
+body {
+    background-color: var(--primary-color);
+    transition: background-color 0.4s ease-in-out;
+}

@@ -34,8 +34,8 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
-              "node_modules/primeng/resources/themes/lara-dark-purple/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/normalize.css/normalize.css"
             ],
             "scripts": []
           },
@@ -102,8 +102,8 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
-              "node_modules/primeng/resources/themes/lara-dark-purple/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/normalize.css/normalize.css"
             ],
             "scripts": []
           }
