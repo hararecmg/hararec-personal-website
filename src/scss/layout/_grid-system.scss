@@ -2,9 +2,9 @@
 $grid-cols: 12;
 $grid-gutter-width: 1rem;
 $breakpoints: (
-    "mobile",
-    "tablet",
-    "web"
+    ("mobile","m"),
+    ("tablet","t"),
+    ("web","w"),
 );
 
 // Clase para definir el contenedor principal
@@ -40,10 +40,33 @@ $breakpoints: (
     align-self: flex-end;
 }
 
+// Clases responsivas para definir el tamaño de las celdas
 @for $i from 1 through $grid-cols {
     @each $name in $breakpoints {
-        .grid-col-#{$name}-#{$i} .#{$name} {
-            flex-basis: calc((100% / #{$grid-cols}) * #{$i});
+        :root {
+            &[data-device="#{nth($name, 1)}"]
+            .grid-col-#{nth($name, 2)}-#{$i} {
+                flex-basis: calc((100% / #{$grid-cols}) * #{$i});
+            }
+        }
+    }
+}
+
+// Clases para definir el desplazamiento de las celdas
+@for $i from 1 through $grid-cols {
+    .grid-offset-#{$i} {
+        margin-left: calc((100% / #{$grid-cols}) * #{$i});
+    }
+}
+
+// Clases responsivas para definir el desplazamiento de las celdas
+@for $i from 1 through $grid-cols {
+    @each $name in $breakpoints {
+        :root {
+            &[data-device="#{nth($name, 1)}"]
+            .grid-offset-#{nth($name, 2)}-#{$i} {
+                margin-left: calc((100% / #{$grid-cols}) * #{$i});
+            }
         }
     }
 }
