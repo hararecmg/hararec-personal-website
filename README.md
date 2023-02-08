@@ -14,7 +14,7 @@
 
 ## <div id="acerca-de-mi">🙋‍♂️ Acerca de mí</div>
 
-¡Hola!, mi nombre es Hararec y soy un desarrollador frontend con experiencia en tecnologías como React y Angular. También tengo conocimientos en diseño de interfaz de usuario y trabajando en equipo bajo metodologías ágiles. Mi formación en matemáticas me brinda una visión analítica y lógica para abordar problemas técnicos. Además soy un apasionado por el mundo digital, y siempre estoy buscando nuevos desafíos para mejorar mis habilidades y ampliar mi conocimiento. Para mí será un gusto aportar valor a cualquier equipo de trabajo con soluciones innovadoras.
+¡Hola!, mi nombre es Hararec y soy un desarrollador full stack con experiencia en javascript y python, y en tecnologías como React, Angular y Django. También tengo conocimientos en diseño de interfaz de usuario y trabajando en equipo bajo metodologías ágiles. Mi formación en matemáticas me brinda una visión analítica y lógica para abordar problemas técnicos. Además soy un apasionado por el mundo digital, y siempre estoy buscando nuevos desafíos para mejorar mis habilidades y ampliar mi conocimiento. Para mí será un gusto aportar valor a cualquier equipo de trabajo con soluciones innovadoras.
 
 #### <div id="contacto">_📧 Mi contacto y redes sociales:_<div/>
 
@@ -29,7 +29,7 @@
 
 ## <div id="acerca-de-este-repositorio">📂 Acerca de este Repositorio</div>
 
-Este repositorio alberga el código fuente de mi sitio web personal, el cual usa la versión 15.1.0 de Angular, usa las librerías de diseño [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/) y [Bootstrap-icons](https://icons.getbootstrap.com/), y sigue el flujo de trabajo de Gitflow. Además, utilizo la notación de [Conventional Commits](https://www.conventionalcommits.org) para mis commits, lo cual me permite mantener un control y una buena documentación del código. Este proyecto ha sido inspirado en diversos diseños mostrados en el canal de Youtube [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT), por lo que quiero expresar mi más sincero agradecimiento por compartir su conocimiento y por ser una fuente de inspiración para mí. Mi portafolio incluye una selección de proyectos que he realizado a lo largo de mi carrera como desarrollador. Cada uno de ellos refleja mis habilidades y mi pasión por el desarrollo de software de calidad. ¡Si quieres conocer más sobre mi trabajo o colaborar juntos, no dudes en ponerte en contacto conmigo! Estoy seguro de que juntos podemos alcanzar grandes objetivos.
+Este repositorio alberga el código fuente de mi sitio web personal, el cual usa la versión 15.1.0 de Angular, usa las librerías de diseño [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap-icons](https://icons.getbootstrap.com/) y [Normalize.css](https://necolas.github.io/normalize.css/), y sigue el flujo de trabajo de Gitflow. Además, utilizo la notación de [Conventional Commits](https://www.conventionalcommits.org) para mis commits, lo cual me permite mantener un control y una buena documentación del código. Este proyecto también ha sido inspirado en diseños mostrados en el canal de Youtube [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT), por lo que quiero expresar mi más sincero agradecimiento por compartir su conocimiento y por ser una fuente de inspiración para mí. Mi portafolio incluye una selección de proyectos que he realizado a lo largo de mi carrera como desarrollador. Cada uno de ellos refleja mis habilidades y mi pasión por el desarrollo de software de calidad. ¡Si quieres conocer más sobre mi trabajo o colaborar juntos, no dudes en ponerte en contacto conmigo! Estoy seguro de que juntos podemos alcanzar grandes objetivos.
 
 <details>
   <summary>Proyectos incluidos</summary>
@@ -71,7 +71,7 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
 
   Para clonar el repositorio de este proyecto, abre una terminal y escribe lo siguiente:
   ```
-  git clone https://github.com/hararecmg/Portafolio-Personal.git
+  git clone https://github.com/hararecmg/hararec-website.git
   ```
   Esto creará una copia del repositorio en tu máquina local.
   
@@ -82,7 +82,7 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
   
   Una vez que hayas descargado o clonado el repositorio, necesitarás instalar las dependencias del proyecto. Para hacerlo, abre una terminal y navega hasta la carpeta del proyecto:
   ```
-  cd Portafolio-Personal
+  cd hararec-website
   ```
   Luego, instala las dependencias del proyecto con npm:
   ```
@@ -108,7 +108,7 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
 </details>
 
 <details>
-  <summary>(Opcional) Crear tu Versión de Producción</summary>
+  <summary>Crear tu Versión de Producción</summary>
   
   Para crear una versión de producción de tu aplicación, ejecuta el siguiente comando:
   ```
@@ -163,7 +163,7 @@ Espero que hayas disfrutado explorando mis proyectos y que hayas encontrado algo
 
 ## <div id="about-me">🙋‍♂️ About Me</div>
 
-Hello! My name is Hararec and I am a frontend developer with experience in technologies such as React and Angular. I also have knowledge in user interface design and working in a team using agile methodologies. My math education gives me an analytical and logical vision for tackling technical problems. I am also passionate about the digital world and am always looking for new challenges to improve my skills and expand my knowledge. It will be a pleasure for me to contribute value to any work team with innovative solutions.
+Hi! I'm Hararec, a full-stack dev with experience in Javascript and Python, as well as techs like React, Angular, and Django. I've got a background in UI design and teamwork using agile methodologies, and my mathematical background provides me with an analytical and logical approach to solving tech problems. I'm passionate about the digital world and always looking for new challenges to enhance my skills and knowledge. I'd be thrilled to bring innovative solutions to any work team.
 
 #### <div id="contact">_📧 My contact and social media:_<div/>
 
@@ -177,7 +177,7 @@ Hello! My name is Hararec and I am a frontend developer with experience in techn
 
 ## <div id="about-this-repository">📂 About This Repository</div>
 
-This repository hosts the source code for my personal website, which uses Angular version 15.1.0, uses the [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/) and [Bootstrap-icons](https://icons.getbootstrap.com/) design libraries, and follow the Gitflow workflow I also use the notation of [Conventional Commits](https://www.conventionalcommits.org) for my commits, which allows me to maintain control and good documentation of the code. This project has been inspired by various designs shown on the Youtube channel [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT), so I want to express my sincere gratitude for sharing their knowledge and for being a source of inspiration for me. My portfolio includes a selection of projects that I have carried out throughout my career as a developer. Each of them reflects my skills and my passion for developing quality software. If you want to learn more about my work or collaborate together, don't hesitate to get in touch with me! I am sure that together we can achieve great goals.
+This repo holds the source code for my personal website, using Angular v15.1.0 and the design libs [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap-icons](https://icons.getbootstrap.com/), and [Normalize.css](https://necolas.github.io/normalize.css/). It follows the Gitflow workflow and I use [Conventional Commits](https://www.conventionalcommits.org) notation for my commits, ensuring proper code control and documentation. The project's also inspired by designs shown on the [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT) Youtube channel, and I'm grateful for their sharing of knowledge and being an inspiration. My portfolio showcases selected projects I've completed throughout my dev career, each reflecting my skills and passion for delivering quality software. If you want to learn more about my work or collaborate, don't hesitate to reach out! I'm confident we can achieve great things together.
 
 <details>
   <summary>Included Projects</summary>
@@ -221,7 +221,7 @@ Below are the instructions for cloning and/or downloading and running the projec
   
   To clone the repository of this project, open a terminal and type the following:
   ```
-  git clone https://github.com/hararecmg/Portafolio-Personal.git
+  git clone https://github.com/hararecmg/hararec-website.git
   ```
   This will create a copy of the repository on your local machine.
 
@@ -233,7 +233,7 @@ Below are the instructions for cloning and/or downloading and running the projec
   Once you have downloaded or cloned the repository, you will need to install the project dependencies. To do this, open a terminal and navigate to the project folder:
 
   ```
-  cd Portafolio-Personal
+  cd hararec-website
   ```
   Then, install the project dependencies with npm:
   
@@ -259,7 +259,7 @@ Below are the instructions for cloning and/or downloading and running the projec
 </details>
 
 <details>
-  <summary>(Optional) Create your Production Version</summary>
+  <summary>Create your Production Version</summary>
 
   To create a production version of your application, run the following command:
 
