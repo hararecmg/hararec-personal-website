@@ -27,6 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
+              "src/assets/i18n",
               "src/assets/icons",
               "src/manifest.json",
               "src/humans.txt"
@@ -95,6 +96,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
+              "src/assets/i18n",
               "src/assets/icons",
               "src/manifest.json",
               "src/humans.txt"
