@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from './shared/services/theme.service';
 import { DeviceService } from './shared/services/device.service';
+import { LanguageService } from './shared/services/language.service';
 
 
 @Component({
@@ -14,14 +14,13 @@ export class AppComponent implements OnInit {
 
   constructor(
     private primengConfig: PrimeNGConfig,
-    private translate: TranslateService,
     private themeService: ThemeService,
     private deviceService: DeviceService,
-  ) { 
-    this.translate.setDefaultLang('es');
-  }
+    private language: LanguageService,
+  ) { }
 
   ngOnInit() {
     this.primengConfig.ripple = true;
+    this.language.languageConfig('es');
   }
 }
