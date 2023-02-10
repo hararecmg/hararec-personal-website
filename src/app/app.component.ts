@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PrimeNGConfig, MegaMenuItem } from 'primeng/api';
+import { PrimeNGConfig } from 'primeng/api';
+import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from './shared/services/theme.service';
 import { DeviceService } from './shared/services/device.service';
 
@@ -11,13 +12,14 @@ import { DeviceService } from './shared/services/device.service';
 })
 export class AppComponent implements OnInit {
 
-  items: MegaMenuItem[] = [];
-
   constructor(
     private primengConfig: PrimeNGConfig,
+    private translate: TranslateService,
     private themeService: ThemeService,
-    private deviceService: DeviceService
-  ) { }
+    private deviceService: DeviceService,
+  ) { 
+    this.translate.setDefaultLang('es');
+  }
 
   ngOnInit() {
     this.primengConfig.ripple = true;
