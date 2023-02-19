@@ -1,0 +1,58 @@
+# Nombre del flujo de trabajo
+name: Deploy
+
+# Evento que activará el flujo de trabajo
+# En este caso, se activará al cerrar un (PR) en la rama main
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+# Definición de una variable de entorno llamada ACCESS_TOKEN
+# que se obtiene del secreto almacenado en GitHub
+env:
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+
+# Especificación de los trabajos que se ejecutarán
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout del código
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # Configuración de la versión de Node.js a utilizar
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.14.0
+        
+      # Instalación de las dependencias del proyecto
+      - name: Install dependencies
+        run: npm ci
+      
+      # Compilación de la aplicación en modo producción
+      - name: Build production
+        run: ng build --configuration production --aot --build-optimizer --optimization --output-path docs/ --resources-output-path resourses/
+
+      # Verificación de que el modo producción se haya realizado correctamente 
+      - name: Verify build
+        run: ls ./docs
+        if: success()
+
+      # Despliegue de la aplicación en GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ env.ACCESS_TOKEN }}
+          publish_dir: ./docs
+          # cname: hararecmg.dev
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
