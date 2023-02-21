@@ -110,6 +110,9 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
 
   ```bash
   export OPENAI_API_KEY=[OPENAI_API_KEY] PEXELS_API_KEY=[PEXELS_API_KEY]
+  # o
+  export OPENAI_API_KEY=[OPENAI_API_KEY]
+  export PEXELS_API_KEY=[PEXELS_API_KEY]
   ```
 
   Esto definirá las variables de entorno OPENAI_API_KEY y PEXELS_API_KEY con los valores proporcionados en la sesión actual de la terminal.
@@ -120,6 +123,9 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
 
   ```bash
   set OPENAI_API_KEY=[OPENAI_API_KEY] & set PEXELS_API_KEY=[PEXELS_API_KEY]
+  # o
+  set OPENAI_API_KEY=[OPENAI_API_KEY]
+  set PEXELS_API_KEY=[PEXELS_API_KEY]
   ```
 
   Esto definirá las variables de entorno `OPENAI_API_KEY` y `PEXELS_API_KEY` con los valores proporcionados en la sesión actual de la consola de comandos.
@@ -295,6 +301,9 @@ Below are the instructions for cloning and/or downloading and running the projec
 
   ```bash
   export OPENAI_API_KEY=[OPENAI_API_KEY] PEXELS_API_KEY=[PEXELS_API_KEY]
+  # or
+  export OPENAI_API_KEY=[OPENAI_API_KEY]
+  export PEXELS_API_KEY=[PEXELS_API_KEY]
   ```
 
   This will set the OPENAI_API_KEY and PEXELS_API_KEY environment variables to the values ​​provided in the current terminal session.
@@ -305,6 +314,9 @@ Below are the instructions for cloning and/or downloading and running the projec
 
   ```bash
   set OPENAI_API_KEY=[OPENAI_API_KEY] & set PEXELS_API_KEY=[PEXELS_API_KEY]
+  # or
+  set OPENAI_API_KEY=[OPENAI_API_KEY]
+  set PEXELS_API_KEY=[PEXELS_API_KEY]
   ```
 
   This'll set the `OPENAI_API_KEY` and `PEXELS_API_KEY` environment variables to the values ​​provided in the current shell session.
