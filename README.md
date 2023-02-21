@@ -95,6 +95,40 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
 </details>
 
 <details>
+  <summary>Configuración de Variables de Entorno</summary>
+
+  La aplicación requiere que se configuren las siguientes variables de entorno antes de ejecutarse:
+
+  - `OPENAI_API_KEY`: la clave de API de OpenAI (obtenida de https://openai.com/api/).
+  - `PEXELS_API_KEY`: la clave de API de Pexels (obtenida de https://www.pexels.com/api/).
+
+  Para configurar estas variables de entorno en diferentes sistemas operativos, siga las instrucciones a continuación:
+
+  ### Unix / Linux / macOS
+
+  Ejecute el siguiente comando en la terminal, reemplazando `[OPENAI_API_KEY]` y `[PEXELS_API_KEY]` con las claves de API correspondientes:
+
+  ```bash
+  export OPENAI_API_KEY=[OPENAI_API_KEY] PEXELS_API_KEY=[PEXELS_API_KEY]
+  ```
+
+  Esto definirá las variables de entorno OPENAI_API_KEY y PEXELS_API_KEY con los valores proporcionados en la sesión actual de la terminal.
+
+  ### Windows
+
+  Ejecute el siguiente comando en la consola de comandos, reemplazando `[OPENAI_API_KEY]` y `[PEXELS_API_KEY]` con las claves de API correspondientes:
+
+  ```bash
+  set OPENAI_API_KEY=[OPENAI_API_KEY] & set PEXELS_API_KEY=[PEXELS_API_KEY]
+  ```
+
+  Esto definirá las variables de entorno `OPENAI_API_KEY` y `PEXELS_API_KEY` con los valores proporcionados en la sesión actual de la consola de comandos.
+
+  Es importante tener en cuenta que estas variables de entorno deben configurarse antes de ejecutar la aplicación. También es importante mencionar que no se están usando las librerías dotenv, dotenv-flow o dotenv-webpack para cargar las variables de entorno en este proyecto de Angular, debido a que estas librerías pueden producir errores de compatibilidad con el webpack interno de Angular en versiones 5 o superiores.
+  
+</details>
+
+<details>
   <summary>Ejecutar la Aplicación</summary>
   
   Una vez que hayas instalado las dependencias del proyecto, puedes ejecutar la aplicación con el siguiente comando:
@@ -243,6 +277,40 @@ Below are the instructions for cloning and/or downloading and running the projec
   npm i
   ```
   This will download all the project dependencies and install them in the `node_modules` folder.
+</details>
+
+<details>
+  <summary>Setting Environment Variables</summary>
+
+  The application requires the following environment variables to be set before running:
+
+  - `OPENAI_API_KEY`: The OpenAI API key (obtained from https://openai.com/api/).
+  - `PEXELS_API_KEY`: The Pexels API key (obtained from https://www.pexels.com/api/).
+
+  To set these environment variables on different operating systems, follow the instructions below:
+
+  ### Unix / Linux / macOS
+
+  Run the following command in the terminal, replacing `[OPENAI_API_KEY]` and `[PEXELS_API_KEY]` with the corresponding API keys:
+
+  ```bash
+  export OPENAI_API_KEY=[OPENAI_API_KEY] PEXELS_API_KEY=[PEXELS_API_KEY]
+  ```
+
+  This will set the OPENAI_API_KEY and PEXELS_API_KEY environment variables to the values ​​provided in the current terminal session.
+
+  ### Windows
+
+  Run the following command at the command prompt, replacing `[OPENAI_API_KEY]` and `[PEXELS_API_KEY]` with the appropriate API keys:
+
+  ```bash
+  set OPENAI_API_KEY=[OPENAI_API_KEY] & set PEXELS_API_KEY=[PEXELS_API_KEY]
+  ```
+
+  This'll set the `OPENAI_API_KEY` and `PEXELS_API_KEY` environment variables to the values ​​provided in the current shell session.
+
+  It's important to note that these environment variables must be set before running the application. It's also important to mention that the dotenv, dotenv-flow or dotenv-webpack libraries aren't being used to load the environment variables in this Angular project, because these libraries can produce compatibility errors with Angular's internal webpack in versions 5 or higher.
+  
 </details>
 
 <details>
