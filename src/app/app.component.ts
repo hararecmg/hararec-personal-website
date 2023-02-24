@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { ThemeService } from './shared/services/theme.service';
-import { DeviceService } from './shared/services/device.service';
-import { LanguageService } from './shared/services/language.service';
+import { ThemeService } from './shared/services/global/theme.service';
+import { DeviceService } from './shared/services/global/device.service';
+import { LanguageService } from './shared/services/global/language.service';
 
 
 @Component({

@@ -2,7 +2,7 @@ import { Injectable, Inject, Renderer2, RendererFactory2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, map, shareReplay, BehaviorSubject } from 'rxjs';
-import { Device } from '../interfaces/device';
+import { Device } from '../../interfaces/device';
 
 @Injectable({
   providedIn: 'root'
