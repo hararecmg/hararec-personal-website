@@ -13,8 +13,6 @@ import localeEs from '@angular/common/locales/es';
 import localeEn from '@angular/common/locales/en';
 import localeFr from '@angular/common/locales/fr';
 import localeZh from '@angular/common/locales/zh';
-import localeHi from '@angular/common/locales/hi';
-import localeAr from '@angular/common/locales/ar';
 import localeRu from '@angular/common/locales/ru';
 import localePt from '@angular/common/locales/pt';
 import localeDe from '@angular/common/locales/de';
@@ -27,10 +25,6 @@ registerLocaleData(localeEn);
 registerLocaleData(localeFr);
 // Chino
 registerLocaleData(localeZh);
-// Hindi
-registerLocaleData(localeHi);
-// Árabe
-registerLocaleData(localeAr);
 // Ruso
 registerLocaleData(localeRu);
 // Portugués

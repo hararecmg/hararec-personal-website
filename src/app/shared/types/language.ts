@@ -1,9 +1,8 @@
-export type Language = 'ar'|
-    'de'|
-    'en'|
-    'es'|
-    'fr'|
-    'hi'|
-    'pt'|
-    'ru'|
-    'zh'
+export type Language =
+    'de-DE'|
+    'en-US'|
+    'es-ES'|
+    'fr-FR'|
+    'pt-BR'|
+    'ru-RU'|
+    'zh-TW'

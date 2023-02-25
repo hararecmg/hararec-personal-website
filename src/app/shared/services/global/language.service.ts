@@ -8,15 +8,13 @@ import { Language } from '../../types/language';
 export class LanguageService {
 
   private languages: Language[] = [
-    'ar',
-    'de',
-    'en',
-    'es',
-    'fr',
-    'hi',
-    'pt',
-    'ru',
-    'zh',
+    'de-DE',
+    'en-US',
+    'es-ES',
+    'fr-FR',
+    'pt-BR',
+    'ru-RU',
+    'zh-TW',
   ];
 
   constructor(private translate: TranslateService) { }

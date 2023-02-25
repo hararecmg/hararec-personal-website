@@ -21,6 +21,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.primengConfig.ripple = true;
-    this.language.languageConfig('es');
+    this.language.languageConfig('es-ES');
   }
 }

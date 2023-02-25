@@ -1,11 +1,12 @@
-import { Orientation, Size, Color, Locale } from '../types/pexels';
+import { Orientation, Size, Color } from '../types/pexels';
+import { Language } from '../types/language';
 
 export interface PexelsRequest {
     query: string;
     orientation?: Orientation;
     size?: Size;
     color?: Color;
-    locale?: Locale;
+    locale?: Language;
     page?: number;
     per_page?: number;
 }
