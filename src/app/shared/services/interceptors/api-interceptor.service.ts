@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from './../../../../environments/environment.development';
@@ -10,7 +10,7 @@ import { environment } from './../../../../environments/environment.development'
 export class ApiInterceptorService implements HttpInterceptor {
 
   private apiUrls = [
-    environment.pexelsBaseUrl,
+    environment.pexelBaseUrl,
     environment.openAiBaseUrl,
   ];
 
@@ -22,8 +22,8 @@ export class ApiInterceptorService implements HttpInterceptor {
       return new Observable(obs => obs.complete());
     }
 
-    if (req.url.includes(environment.pexelsBaseUrl)) {
-      headers = headers.set('Authorization', environment.pexelsApiKey);
+    if (req.url.includes(environment.pexelBaseUrl)) {
+      headers = headers.set('Authorization', environment.pexelApiKey);
     }
 
     if (req.url.includes(environment.openAiBaseUrl)) {

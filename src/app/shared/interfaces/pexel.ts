@@ -1,7 +1,7 @@
-import { Orientation, Size, Color } from '../types/pexels';
+import { Orientation, Size, Color } from '../types/pexel';
 import { Language } from '../types/language';
 
-export interface PexelsRequest {
+export interface PexelRequest {
     query: string;
     orientation?: Orientation;
     size?: Size;
@@ -11,26 +11,26 @@ export interface PexelsRequest {
     per_page?: number;
 }
 
-export interface PexelsResponse {
+export interface PexelResponse {
     page: number;
-    per_page: number;
+    per_page?: number;
     photos: Photo[];
-    total_results: number;
+    total_results?: number;
     next_page?: string;
     prev_page?: string;
 }
 
 export interface Photo {
     id: number;
-    width: number;
-    height: number;
-    url: string;
+    width?: number;
+    height?: number;
+    url?: string;
     photographer: string;
     photographer_url: string;
-    photographer_id: number;
+    photographer_id?: number;
     avg_color: string;
     src: Src;
-    liked: boolean;
+    liked?: boolean;
     alt: string;
 }
 
@@ -43,18 +43,4 @@ export interface Src {
     portrait: string;
     landscape: string;
     tiny: string;
-}
-
-export interface ShortPexelsResponse {
-    page: number;
-    photos: ShortPhoto[];
-}
-
-export interface ShortPhoto {
-    id: number;
-    photographer: string;
-    photographer_url: string;
-    avg_color: string;
-    src: Src;
-    alt: string;
 }
