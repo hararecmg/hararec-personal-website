@@ -97,40 +97,34 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
 <details>
   <summary>Configuración de Variables de Entorno</summary>
 
-  La aplicación requiere que se configuren las siguientes variables de entorno antes de ejecutarse:
+  Esta aplicación utiliza las dependencias para desarrollo [@ngx-env/builder](https://github.com/chihab/ngx-env/) y [@types/node](https://www.npmjs.com/package/@types/node/) para habilitar el uso de variables de entorno en todo el proyecto. Esto significa que las claves de API y otras configuraciones sensibles se deben almacenar en un archivo `.env` que se encuentra en la raíz del proyecto. Así la aplicación requiere que se configuren las siguientes variables de entorno antes de ejecutarse:
 
-  - `OPENAI_API_KEY`: la clave de API de OpenAI (obtenida de https://openai.com/api/).
-  - `PEXELS_API_KEY`: la clave de API de Pexels (obtenida de https://www.pexels.com/api/).
+  - `NG_OPENAI_API_KEY`: la clave de API de OpenAI (obtenida de https://openai.com/api/).
+  - `NG_PEXEL_API_KEY`: la clave de API de Pexels (obtenida de https://www.pexels.com/api/).
 
   Para configurar estas variables de entorno en diferentes sistemas operativos, siga las instrucciones a continuación:
 
   ### Unix / Linux / macOS
 
-  Ejecute el siguiente comando en la terminal, reemplazando `[OPENAI_API_KEY]` y `[PEXELS_API_KEY]` con las claves de API correspondientes:
+  Ejecute el siguiente comando en la terminal:
 
   ```bash
-  export OPENAI_API_KEY=[OPENAI_API_KEY] PEXELS_API_KEY=[PEXELS_API_KEY]
-  # o
-  export OPENAI_API_KEY=[OPENAI_API_KEY]
-  export PEXELS_API_KEY=[PEXELS_API_KEY]
+  cp .env.example .env
   ```
 
-  Esto definirá las variables de entorno OPENAI_API_KEY y PEXELS_API_KEY con los valores proporcionados en la sesión actual de la terminal.
+  Luego, reemplace los valores de las variables `NG_OPENAI_API_KEY` y `NG_PEXEL_API_KEY` con sus propias claves de API.
 
   ### Windows
 
-  Ejecute el siguiente comando en la consola de comandos, reemplazando `[OPENAI_API_KEY]` y `[PEXELS_API_KEY]` con las claves de API correspondientes:
+  Ejecute el siguiente comando en la consola de comandos:
 
   ```bash
-  set OPENAI_API_KEY=[OPENAI_API_KEY] & set PEXELS_API_KEY=[PEXELS_API_KEY]
-  # o
-  set OPENAI_API_KEY=[OPENAI_API_KEY]
-  set PEXELS_API_KEY=[PEXELS_API_KEY]
+  copy .env.example .env
   ```
 
-  Esto definirá las variables de entorno `OPENAI_API_KEY` y `PEXELS_API_KEY` con los valores proporcionados en la sesión actual de la consola de comandos.
+  Luego, reemplace los valores de las variables `NG_OPENAI_API_KEY` y `NG_PEXEL_API_KEY` con sus propias claves de API.
 
-  Es importante tener en cuenta que estas variables de entorno deben configurarse antes de ejecutar la aplicación. También es importante mencionar que no se están usando las librerías dotenv, dotenv-flow o dotenv-webpack para cargar las variables de entorno en este proyecto de Angular, debido a que estas librerías pueden producir errores de compatibilidad con el webpack interno de Angular en versiones 5 o superiores.
+  Recuerde no compartir su archivo `.env` con otros y mantenerlo en el archivo `.gitignore` para que no se suba a su repositorio.
   
 </details>
 
@@ -288,40 +282,34 @@ Below are the instructions for cloning and/or downloading and running the projec
 <details>
   <summary>Setting Environment Variables</summary>
 
-  The application requires the following environment variables to be set before running:
+  This application uses development dependencies [@ngx-env/builder](https://github.com/chihab/ngx-env/) and [@types/node](https://www.npmjs.com/package/@types/node/) to enable the use of environment variables throughout the project. This means that API keys and other sensitive configurations should be stored in a `.env` file located at the root of the project. Therefore, the application requires the following environment variables to be configured before running:
 
-  - `OPENAI_API_KEY`: The OpenAI API key (obtained from https://openai.com/api/).
-  - `PEXELS_API_KEY`: The Pexels API key (obtained from https://www.pexels.com/api/).
+  - `NG_OPENAI_API_KEY`: OpenAI API key (obtained from https://openai.com/api/).
+  - `NG_PEXEL_API_KEY`: Pexels API key (obtained from https://www.pexels.com/api/).
 
-  To set these environment variables on different operating systems, follow the instructions below:
+  To configure these environment variables on different operating systems, follow the instructions below:
 
   ### Unix / Linux / macOS
 
-  Run the following command in the terminal, replacing `[OPENAI_API_KEY]` and `[PEXELS_API_KEY]` with the corresponding API keys:
+  Run the following command in the terminal:
 
   ```bash
-  export OPENAI_API_KEY=[OPENAI_API_KEY] PEXELS_API_KEY=[PEXELS_API_KEY]
-  # or
-  export OPENAI_API_KEY=[OPENAI_API_KEY]
-  export PEXELS_API_KEY=[PEXELS_API_KEY]
+  cp .env.example .env
   ```
 
-  This will set the OPENAI_API_KEY and PEXELS_API_KEY environment variables to the values ​​provided in the current terminal session.
+  Then, replace the values of the `NG_OPENAI_API_KEY` and `NG_PEXEL_API_KEY` variables with your own API keys.
 
   ### Windows
 
-  Run the following command at the command prompt, replacing `[OPENAI_API_KEY]` and `[PEXELS_API_KEY]` with the appropriate API keys:
+  Run the following command in the command prompt:
 
   ```bash
-  set OPENAI_API_KEY=[OPENAI_API_KEY] & set PEXELS_API_KEY=[PEXELS_API_KEY]
-  # or
-  set OPENAI_API_KEY=[OPENAI_API_KEY]
-  set PEXELS_API_KEY=[PEXELS_API_KEY]
+  copy .env.example .env
   ```
 
-  This'll set the `OPENAI_API_KEY` and `PEXELS_API_KEY` environment variables to the values ​​provided in the current shell session.
+  Then, replace the values of the `NG_OPENAI_API_KEY` and `NG_PEXEL_API_KEY` variables with your own API keys.
 
-  It's important to note that these environment variables must be set before running the application. It's also important to mention that the dotenv, dotenv-flow or dotenv-webpack libraries aren't being used to load the environment variables in this Angular project, because these libraries can produce compatibility errors with Angular's internal webpack in versions 5 or higher.
+  Remember not to share your `.env` file with others and keep it in the `.gitignore` file so it's not uploaded to your repository.
   
 </details>
 
