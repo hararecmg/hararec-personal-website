@@ -1,6 +1,6 @@
 [Documentación en español](#espanol) | [Documentation in English](#english)
 
-# <div id="espanol">💻 Sitio web personal v0.2.0 - HararecMG</div>
+# <div id="espanol">💻 Sitio web personal v0.3.0 - HararecMG</div>
 
 ## <div id="indice">📋 Índice</div>
 
@@ -183,7 +183,7 @@ Espero que hayas disfrutado explorando mis proyectos y que hayas encontrado algo
 <hr/>
 
 
-# <div id="english">💻 Personal website v0.2.0 - HararecMG</div>
+# <div id="english">💻 Personal website v0.3.0 - HararecMG</div>
 
 ## <div id="index">📋 Index</div>
 
