@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Language } from '../types/language';
+import { Language } from '../../types/language';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +8,13 @@ import { Language } from '../types/language';
 export class LanguageService {
 
   private languages: Language[] = [
-    'ar',
-    'de',
-    'en',
-    'es',
-    'fr',
-    'hi',
-    'pt',
-    'ru',
-    'zh',
+    'de-DE',
+    'en-US',
+    'es-ES',
+    'fr-FR',
+    'pt-BR',
+    'ru-RU',
+    'zh-TW',
   ];
 
   constructor(private translate: TranslateService) { }
