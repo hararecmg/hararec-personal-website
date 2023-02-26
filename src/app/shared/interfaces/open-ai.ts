@@ -1,7 +1,7 @@
-import { OpenAIGPT_3Model, OpenAICodexModel } from '../types/open-ai';
+import { OpenAIGPT_3Model, OpenAICodexModel, OpenAIModerationModel } from '../types/open-ai';
 
 export interface OpenAIRequest {
-    model:             OpenAIGPT_3Model | OpenAICodexModel;
+    model:             OpenAIGPT_3Model | OpenAICodexModel | OpenAIModerationModel;
     prompt:            string;
     temperature?:       number;
     max_tokens?:        number;
@@ -33,6 +33,43 @@ export interface Usage {
     total_tokens:      number;
 }
 
+export interface OpenAIModerationRequest {
+    input: string;
+    model?: string;
+}
+
+export interface OpenAIModerationResponse {
+    id:      string;
+    model?:   string;
+    results: Result[];
+}
+
+export interface Result {
+    flagged:         boolean;
+    categories:      Categories;
+    category_scores?: CategoryScores;
+}
+
+export interface Categories {
+    sexual:             boolean;
+    hate:               boolean;
+    violence:           boolean;
+    "self-harm":        boolean;
+    "sexual/minors":    boolean;
+    "hate/threatening": boolean;
+    "violence/graphic": boolean;
+}
+
+export interface CategoryScores {
+    sexual?:             number;
+    hate?:               number;
+    violence?:           number;
+    "self-harm"?:        number;
+    "sexual/minors"?:    number;
+    "hate/threatening"?: number;
+    "violence/graphic"?: number;
+}
+
 // temperature: controla la creatividad de la respuesta. Cuanto mayor sea el valor de temperatura, más creativa será la respuesta. Un valor más bajo hará que la respuesta sea más predecible. En este caso, se ha establecido en 0.7, lo que sugiere una respuesta relativamente creativa pero no completamente aleatoria.
 
 // max_tokens: controla el número máximo de tokens (palabras y signos de puntuación) en la respuesta. En este caso, se ha establecido en 256, lo que indica que la respuesta no debe ser demasiado larga.
@@ -52,3 +89,9 @@ export interface Usage {
 //     "frequency_penalty": 0.0,
 //     "presence_penalty": 0.0
 //   }
+
+// To parse this data:
+//
+//   import { Convert, OpenAIModerationResponse } from "./file";
+//
+//   const openAIModerationResponse = Convert.toOpenAIModerationResponse(json);
