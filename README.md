@@ -1,6 +1,6 @@
 [Documentación en español](#espanol) | [Documentation in English](#english)
 
-# <div id="espanol">💻 Sitio web personal v0.2.0 - HararecMG</div>
+# <div id="espanol">💻 Sitio web personal v0.3.0 - HararecMG</div>
 
 ## <div id="indice">📋 Índice</div>
 
@@ -95,6 +95,40 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
 </details>
 
 <details>
+  <summary>Configuración de Variables de Entorno</summary>
+
+  Esta aplicación utiliza las dependencias para desarrollo [@ngx-env/builder](https://github.com/chihab/ngx-env/) y [@types/node](https://www.npmjs.com/package/@types/node/) para habilitar el uso de variables de entorno en todo el proyecto. Esto significa que las claves de API y otras configuraciones sensibles se deben almacenar en un archivo `.env` que se encuentra en la raíz del proyecto. Así la aplicación requiere que se configuren las siguientes variables de entorno antes de ejecutarse:
+
+  - `NG_OPENAI_API_KEY`: la clave de API de OpenAI (obtenida de https://openai.com/api/).
+  - `NG_PEXEL_API_KEY`: la clave de API de Pexels (obtenida de https://www.pexels.com/api/).
+
+  Para configurar estas variables de entorno en diferentes sistemas operativos, siga las instrucciones a continuación:
+
+  ### Unix / Linux / macOS
+
+  Ejecute el siguiente comando en la terminal:
+
+  ```bash
+  cp .env.example .env
+  ```
+
+  Luego, reemplace los valores de las variables `NG_OPENAI_API_KEY` y `NG_PEXEL_API_KEY` con sus propias claves de API.
+
+  ### Windows
+
+  Ejecute el siguiente comando en la consola de comandos:
+
+  ```bash
+  copy .env.example .env
+  ```
+
+  Luego, reemplace los valores de las variables `NG_OPENAI_API_KEY` y `NG_PEXEL_API_KEY` con sus propias claves de API.
+
+  Recuerde no compartir su archivo `.env` con otros y mantenerlo en el archivo `.gitignore` para que no se suba a su repositorio.
+  
+</details>
+
+<details>
   <summary>Ejecutar la Aplicación</summary>
   
   Una vez que hayas instalado las dependencias del proyecto, puedes ejecutar la aplicación con el siguiente comando:
@@ -149,7 +183,7 @@ Espero que hayas disfrutado explorando mis proyectos y que hayas encontrado algo
 <hr/>
 
 
-# <div id="english">💻 Personal website v0.2.0 - HararecMG</div>
+# <div id="english">💻 Personal website v0.3.0 - HararecMG</div>
 
 ## <div id="index">📋 Index</div>
 
@@ -243,6 +277,40 @@ Below are the instructions for cloning and/or downloading and running the projec
   npm i
   ```
   This will download all the project dependencies and install them in the `node_modules` folder.
+</details>
+
+<details>
+  <summary>Setting Environment Variables</summary>
+
+  This application uses development dependencies [@ngx-env/builder](https://github.com/chihab/ngx-env/) and [@types/node](https://www.npmjs.com/package/@types/node/) to enable the use of environment variables throughout the project. This means that API keys and other sensitive configurations should be stored in a `.env` file located at the root of the project. Therefore, the application requires the following environment variables to be configured before running:
+
+  - `NG_OPENAI_API_KEY`: OpenAI API key (obtained from https://openai.com/api/).
+  - `NG_PEXEL_API_KEY`: Pexels API key (obtained from https://www.pexels.com/api/).
+
+  To configure these environment variables on different operating systems, follow the instructions below:
+
+  ### Unix / Linux / macOS
+
+  Run the following command in the terminal:
+
+  ```bash
+  cp .env.example .env
+  ```
+
+  Then, replace the values of the `NG_OPENAI_API_KEY` and `NG_PEXEL_API_KEY` variables with your own API keys.
+
+  ### Windows
+
+  Run the following command in the command prompt:
+
+  ```bash
+  copy .env.example .env
+  ```
+
+  Then, replace the values of the `NG_OPENAI_API_KEY` and `NG_PEXEL_API_KEY` variables with your own API keys.
+
+  Remember not to share your `.env` file with others and keep it in the `.gitignore` file so it's not uploaded to your repository.
+  
 </details>
 
 <details>
