@@ -9,6 +9,7 @@
 - <a href="#instrucciones-de-instalacion" style="scroll-behavior: smooth;">Instrucciones de Instalación</a>
 - <a href="#como-contribuir" style="scroll-behavior: smooth;">¿Cómo Contribuir?</a>
 - <a href="#licencia" style="scroll-behavior: smooth;">Licencia</a>
+- <a href="#creditos" style="scroll-behavior: smooth;">Créditos</a>
 - <a href="#gracias-por-visitarme" style="scroll-behavior: smooth;">¡Gracias por visitarme!</a>
 
 
@@ -175,6 +176,15 @@ Si tienes alguna pregunta o necesitas más información sobre cómo utilizar el 
 <hr/>
 
 
+## <div id="creditos">🤝 Créditos</div>
+
+Este proyecto utiliza código de los siguientes proyectos con licencia MIT:
+
+- **Proyecto A**: Descripción del proyecto A. Licencia MIT. En este proyecto se utiliza una parte del archivo XYZ de John Doe y Jane Smith, el cual está protegido por derechos de autor y se distribuye bajo la licencia MIT. La parte del archivo que se está utilizando es [descripción de la parte del archivo]. Para más información, consulta el archivo de licencia [aquí](licencias/LICENSE-MIT.txt).
+
+<hr/>
+
+
 ## <div id="gracias-por-visitarme">👍 ¡Gracias por visitarme!</div>
 
 Espero que hayas disfrutado explorando mis proyectos y que hayas encontrado algo de interés. Si tienes alguna pregunta o sugerencia, no dudes en ponerte en <a href="#contacto" style="scroll-behavior: smooth;">contacto</a> conmigo. ¡Me encantaría conocer tu opinión o colaborar contigo en futuros proyectos!
@@ -192,6 +202,7 @@ Espero que hayas disfrutado explorando mis proyectos y que hayas encontrado algo
 - <a href="#installation-instructions" style="scroll-behavior: smooth;">Installation Instructions</a>
 - <a href="#how-to-contribute" style="scroll-behavior: smooth;">How to Contribute?</a>
 - <a href="#license" style="scroll-behavior: smooth;">License</a>
+- <a href="#credits" style="scroll-behavior: smooth;">Credits</a>
 - <a href="#thank-you-for-visiting" style="scroll-behavior: smooth;">Thank You for Visiting!</a>
 
 
@@ -355,6 +366,15 @@ Thank you for your interest in contributing to my projects! There are several wa
 This repository is licensed under the [MIT](https://github.com/hararecmg/Portafolio-Personal/blob/main/LICENCE) license, as I personally prefer and value open source code. This means that you are permitted to use and modify the code included in this repository according to the terms specified in the license. If you use this code in your own projects, you must include a copy of the license and give credit to the original author (me).
 
 If you have any questions or need more information about how to use the code included in this repository, don't hesitate to get in <a href="#contact" style="scroll-behavior: smooth;">contact with me</a> through [LinkedIn](www.linkedin.com/in/hararec-medina-gonzález) or by sending me an [email](mailto:hararecmedina@gmail.com). I will be happy to help!
+
+<hr/>
+
+
+## <div id="credits">🤝 Credits</div>
+
+This project uses code from the following MIT licensed projects:
+
+- **Project A**: Description of project A. MIT License. This project uses a portion of the John Doe and Jane Smith XYZ file, which is copyrighted and distributed under the MIT license. The part of the file that is being used is [description of the part of the file]. For more information, see the license file [here](licencias/LICENSE-MIT.txt).
 
 <hr/>
 
