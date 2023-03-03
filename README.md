@@ -9,6 +9,7 @@
 - <a href="#instrucciones-de-instalacion" style="scroll-behavior: smooth;">Instrucciones de Instalación</a>
 - <a href="#como-contribuir" style="scroll-behavior: smooth;">¿Cómo Contribuir?</a>
 - <a href="#licencia" style="scroll-behavior: smooth;">Licencia</a>
+- <a href="#creditos" style="scroll-behavior: smooth;">Créditos</a>
 - <a href="#gracias-por-visitarme" style="scroll-behavior: smooth;">¡Gracias por visitarme!</a>
 
 
@@ -201,6 +202,7 @@ Espero que hayas disfrutado explorando mis proyectos y que hayas encontrado algo
 - <a href="#installation-instructions" style="scroll-behavior: smooth;">Installation Instructions</a>
 - <a href="#how-to-contribute" style="scroll-behavior: smooth;">How to Contribute?</a>
 - <a href="#license" style="scroll-behavior: smooth;">License</a>
+- <a href="#credits" style="scroll-behavior: smooth;">Credits</a>
 - <a href="#thank-you-for-visiting" style="scroll-behavior: smooth;">Thank You for Visiting!</a>
 
 
