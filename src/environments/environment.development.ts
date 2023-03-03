@@ -5,4 +5,5 @@ export const environment = {
     formspreeId: process.env.NG_FORMSPREE_ID,
     pexelBaseUrl: 'https://api.pexels.com',
     openAiBaseUrl: 'https://api.openai.com',
+    formspreeBaseUrl: 'https://formspree.io/f',
 };
