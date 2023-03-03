@@ -31,6 +31,12 @@
         "src": "/assets/icons/android-chrome-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
+      },
+      {
+        "src": "/assets/icons/safari-pinned-tab.svg",
+        "sizes": "64x64",
+        "type": "image/svg+xml",
+        "purpose": "maskable any"
       }
     ],
     "related_applications": [],
