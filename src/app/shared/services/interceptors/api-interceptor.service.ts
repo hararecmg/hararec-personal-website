@@ -12,6 +12,7 @@ export class ApiInterceptorService implements HttpInterceptor {
   private apiUrls = [
     environment.pexelBaseUrl,
     environment.openAiBaseUrl,
+    environment.formspreeBaseUrl,
   ];
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -30,6 +31,11 @@ export class ApiInterceptorService implements HttpInterceptor {
       headers = headers
       .set('Authorization', `Bearer ${environment.openAiApiKey}`)
       .set('Content-Type', 'application/json');
+    }
+    
+    if (req.url.includes(environment.formspreeBaseUrl)) {
+      headers = headers
+      .set('Accept', 'application/json');
     }
 
     return next.handle(req.clone({ headers })).pipe(
