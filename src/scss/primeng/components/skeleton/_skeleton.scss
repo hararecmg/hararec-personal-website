@@ -1,0 +1,43 @@
+.p-skeleton {
+    position: relative;
+    overflow: hidden;
+}
+
+.p-skeleton::after {
+    content: "";
+    animation: p-skeleton-animation 1.2s infinite;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+.p-skeleton.p-skeleton-circle {
+    border-radius: 50%;
+}
+
+.p-skeleton-none::after {
+    animation: none;
+}
+
+.p-skeleton {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+}
+
+.p-skeleton:after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+}
+
+@keyframes p-skeleton-animation {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
