@@ -1,4 +1,4 @@
-/* hararecmg - https://hararecmg.com */
+/* hararecmg - https://hararecmg.github.io/hararec-website/ */
 
 /* TEAM */
 
@@ -7,7 +7,7 @@ Location: CDMX, México
 
 /* WEBSITE */
 
-Programmed in Angular v15.1.0
+Programmed in Angular v15.2.1
 Components library: PrimeNg
 Icons library: Bootstrap-icons
 
@@ -20,8 +20,9 @@ Icons library: Bootstrap-icons
 - Design: https://www.youtube.com/@OnlineTutorialsYT
 - https://jonmircha.com/
 - https://davidhellmann.com/
+- https://www.adhamdannaway.com/
 
 /* CONTACT */
 
-Email: hararecmedina@gmail.com
+Email: matematicamatematica1729@gmail.com
 Twitter: @HararecMG
