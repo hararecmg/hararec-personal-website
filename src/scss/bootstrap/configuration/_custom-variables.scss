@@ -1,0 +1,62 @@
+@use '../../custom/global/colors' as colors;
+@use '../../custom/global/fonts' as fonts;
+
+// Custom colors
+$blue: map-get(colors.$color-palette, "navy-blue");
+$indigo: map-get(colors.$color-palette, "slate-blue");
+$purple: map-get(colors.$color-palette, "electric-purple");
+$pink: map-get(colors.$color-palette, "orangish-red");
+$red: map-get(colors.$color-palette, "vermilion");
+$orange: map-get(colors.$color-palette, "tangerine");
+$yellow: map-get(colors.$color-palette, "yellow-orange");
+$green: map-get(colors.$color-palette, "slate-grey");
+$teal: map-get(colors.$color-palette, "teal");
+$cyan: map-get(colors.$color-palette, "electric-blue");
+$gray-100: map-get(colors.$color-palette, "alabaster");
+$gray-900: map-get(colors.$color-palette, "slate-grey");
+$white: map-get(colors.$color-palette, "snow");
+$black: map-get(colors.$color-palette, "jet-black");
+
+
+$body-bg:                   $white;
+$body-color:                $gray-900;
+$headings-color:              $white;
+
+:root {
+    &[data-theme="light"] {
+        
+        $body-bg:                   $white;
+        $body-color:                $gray-900;
+        $headings-color:              $white;
+    }
+    &[data-theme="dark"] {
+        
+        $body-bg:                   $black;
+        $body-color:                $gray-100;
+        $headings-color:              $black;
+    }
+}
+
+
+// Custom Typography
+$font-family-sans-serif:      fonts.$text-font, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       fonts.$text-font-italic, monospace;
+$font-family-base:            fonts.$text-font;
+$font-family-code:            fonts.$secondary-font;
+$headings-font-family:        fonts.$primary-font;
+$display-font-family:         fonts.$secondary-font;
+
+
+// Important utilities
+$enable-important-utilities:  false;
+
+
+// Custom breakpoints (These breakpoints match those of @angular/cdk)
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1920px,
+  xxl: 2000px
+);
