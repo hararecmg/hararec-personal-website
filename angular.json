@@ -35,8 +35,7 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
-              "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/normalize.css/normalize.css"
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [],
             "ngxEnv": {
@@ -113,8 +112,7 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
-              "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/normalize.css/normalize.css"
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           }
