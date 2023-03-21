@@ -5,11 +5,14 @@ import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
 import { PrimengModule } from '../primeng/primeng.module';
 import { ScrollingParallaxComponent } from './components/scrolling-parallax/scrolling-parallax.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+
 
 @NgModule({
   declarations: [
     HomeComponent,
     ScrollingParallaxComponent,
+    WelcomeComponent
   ],
   imports: [
     CommonModule,
