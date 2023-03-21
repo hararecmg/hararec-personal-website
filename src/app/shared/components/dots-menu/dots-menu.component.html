@@ -1,0 +1,11 @@
+<div 
+    class="navigation" 
+    (click)="toggleMenu()" 
+    [ngClass]="{'active': isActive}">
+    <div 
+        *ngFor="let item of iconsClass; let i = index" 
+        [ngStyle]="{'--i': i, '--x': item.x, '--y': item.y}">
+        <i [ngClass]="item.class"></i>
+        <span>{{ item.name }}</span>
+    </div>
+</div>
