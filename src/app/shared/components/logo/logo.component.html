@@ -1,0 +1,15 @@
+<div class="logo-background" 
+    (mouseover)="isHoverLogo(true)"
+    (mouseleave)="isHoverLogo()"
+    (touchstart)="isHoverLogo(true)"
+    (touchend)="isHoverLogo()"
+    [ngStyle]="logoStyles">
+    <img 
+        class="back" 
+        src="../../../../assets/icons/rabbit.png" 
+        alt="Rabbit Image"
+        [ngStyle]="{'--translationPx': translationPx }" />
+    <img 
+        src="../../../../assets/icons/hat.png" 
+        alt="Hat Image" />
+</div>

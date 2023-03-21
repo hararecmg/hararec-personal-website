@@ -1,0 +1,23 @@
+.logo-background {
+    position: relative;
+    margin: 0 auto;
+    border-style: solid;
+    border-color: #fff;
+    background-color: #faf7af;
+    border-radius: 50%;
+
+    img {
+        position: absolute;
+        max-width: 100%;
+        height: auto;
+
+        &.back {
+            transition: transform 1s ease;
+        }
+    }
+
+    &:hover .back, &:active .back {
+        transition: transform 0.5s ease;
+        transform: translateY(var(--translationPx));
+    }
+}

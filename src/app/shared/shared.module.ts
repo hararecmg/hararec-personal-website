@@ -6,6 +6,7 @@ import { BottomMenuComponent } from './components/bottom-menu/bottom-menu.compon
 import { PrimengModule } from '../primeng/primeng.module';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { DotsMenuComponent } from './components/dots-menu/dots-menu.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { DotsMenuComponent } from './components/dots-menu/dots-menu.component';
     BottomMenuComponent,
     ContactFormComponent,
     DotsMenuComponent,
+    LogoComponent,
   ],
   imports: [
     CommonModule,
