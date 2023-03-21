@@ -25,7 +25,7 @@ export class ScrollingParallaxComponent implements OnInit, AfterViewInit, OnDest
 
   isLoading = true;
   dotsMenu = DotsMenuComponent;
-  pexelSubs!: Subscription;  
+  pexelSubs!: Subscription;
   pexelsImages!: PexelResponse;
   parallaxItems: ParallaxItem[] = [
     {
@@ -49,23 +49,26 @@ export class ScrollingParallaxComponent implements OnInit, AfterViewInit, OnDest
     private device: DeviceService,
     private pexels: PexelService,
     @Inject(DOCUMENT) private document: Document
-  ) {}
-  
+  ) { }
+
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
     this.pexelSubs = this.pexels.searchPhotos({
-      query: 'math',
-      per_page: this.parallaxItems.length,
+      end_point: 'curated',
+      pexel_request: {
+        // query: 'naturally',
+        per_page: this.parallaxItems.length,
+      }
     }).subscribe(resp => {
       this.pexelsImages = resp;
       this.isLoading = false;
     });
   }
-  
+
   ngAfterViewInit(): void {
     const reveal = this.document.querySelectorAll('.reveal');
     const contents = this.document.querySelectorAll('.content-component');
-    
+
     reveal.forEach(text => ScrollTrigger.create({
       trigger: text,
       toggleClass: 'active',
@@ -81,7 +84,7 @@ export class ScrollingParallaxComponent implements OnInit, AfterViewInit, OnDest
     })
     );
   }
-  
+
   ngOnDestroy(): void {
     this.pexelSubs.unsubscribe();
   }
