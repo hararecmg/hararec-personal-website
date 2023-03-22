@@ -1,6 +1,7 @@
 <div *ngIf="!isLoading; else loading">
     <seccion class="parallax-item" *ngFor="let item of parallaxItems; let i = index" 
-        [ngStyle]="{'background-image': getPropertiesByIndex(i)['background']}">
+        [ngStyle]="{'background-image': getPropertiesByIndex(i)['background']}"
+        [ngClass]="getPropertiesByIndex(i)['class']">
         <span class="pexels">
           <span>
             Foto de
@@ -17,7 +18,8 @@
           <section class="content-seccion">
             <div>
                 <h2 class="reveal">{{item.title}}</h2>
-                <h2 class="reveal subtitle" *ngIf="item.subtitle">{{item.subtitle}}</h2>
+                <h2 class="reveal subtitle" 
+                  *ngIf="item.subtitle">{{item.subtitle}}</h2>
                 <div class="content-component">
                   <div [ngComponentOutlet]="item.component"></div>
                 </div>

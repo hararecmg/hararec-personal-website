@@ -24,7 +24,6 @@ import { Subscription } from 'rxjs';
 export class ScrollingParallaxComponent implements OnInit, AfterViewInit, OnDestroy {
 
   isLoading = true;
-  dotsMenu = DotsMenuComponent;
   pexelSubs!: Subscription;
   pexelsImages!: PexelResponse;
   parallaxItems: ParallaxItem[] = [
@@ -105,7 +104,7 @@ export class ScrollingParallaxComponent implements OnInit, AfterViewInit, OnDest
     }
 
     return {
-      'class': `item-${this.parallaxItems[index].title}`,
+      'class': `parallax-item-${this.parallaxItems[index].title}`,
       'background': `url(${urlImage})`,
       'photographer': this.pexelsImages.photos[index].photographer,
       'photographer_url': this.pexelsImages.photos[index].photographer_url
