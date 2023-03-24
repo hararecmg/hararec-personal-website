@@ -53,13 +53,13 @@ export class ScrollingParallaxComponent implements OnInit, AfterViewInit, OnDest
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
     this.pexelSubs = this.pexels.searchPhotos({
-      end_point: 'curated',
+      end_point: 'search',
       pexel_request: {
-        // query: 'naturally',
+        query: 'natural landscapes',
         per_page: this.parallaxItems.length,
       }
     }).subscribe(resp => {
-      this.pexelsImages = resp;
+      this.pexelsImages = {...resp, photos: resp.photos.reverse()};
       this.isLoading = false;
     });
   }
