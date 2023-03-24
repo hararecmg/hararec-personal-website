@@ -43,6 +43,12 @@ $font-sizes: (
       @include font-size-variables(nth($font, 1), nth($font, 4));
     }
   }
+
+  &[data-device="xlarge"] {
+    @each $font in $font-sizes {
+      @include font-size-variables(nth($font, 1), nth($font, 4));
+    }
+  }
 }
 
 html {
