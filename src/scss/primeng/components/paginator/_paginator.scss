@@ -1,0 +1,131 @@
+.p-datatable .p-paginator-top {
+    border-width: 1px 0 1px 0;
+    border-radius: 0;
+}
+
+.p-datatable .p-paginator-bottom {
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+}
+
+.p-datatable.p-datatable-gridlines .p-paginator-top {
+    border-width: 0 1px 0 1px;
+}
+
+.p-datatable.p-datatable-gridlines .p-paginator-bottom {
+    border-width: 0 1px 1px 1px;
+}
+
+.p-dataview .p-paginator-top {
+    border-width: 1px 0 1px 0;
+    border-radius: 0;
+}
+
+.p-dataview .p-paginator-bottom {
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+}
+
+.p-paginator {
+    background: #071426;
+    color: rgba(255, 255, 255, 0.6);
+    border: solid #0b213f;
+    border-width: 1px;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+    background-color: transparent;
+    border: 0 none;
+    color: rgba(255, 255, 255, 0.6);
+    min-width: 3rem;
+    height: 3rem;
+    margin: 0.143rem;
+    transition: box-shadow 0.2s;
+    border-radius: 6px;
+}
+
+.p-paginator .p-paginator-first:not(.p-disabled):not(.p-highlight):hover,
+.p-paginator .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover,
+.p-paginator .p-paginator-next:not(.p-disabled):not(.p-highlight):hover,
+.p-paginator .p-paginator-last:not(.p-disabled):not(.p-highlight):hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: transparent;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.p-paginator .p-paginator-first {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.p-paginator .p-paginator-last {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.p-paginator .p-dropdown {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: 3rem;
+}
+
+.p-paginator .p-dropdown .p-dropdown-label {
+    padding-right: 0;
+}
+
+.p-paginator .p-paginator-page-input {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.p-paginator .p-paginator-page-input .p-inputtext {
+    max-width: 3rem;
+}
+
+.p-paginator .p-paginator-current {
+    background-color: transparent;
+    border: 0 none;
+    color: rgba(255, 255, 255, 0.6);
+    min-width: 3rem;
+    height: 3rem;
+    margin: 0.143rem;
+    padding: 0 0.5rem;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+    background-color: transparent;
+    border: 0 none;
+    color: rgba(255, 255, 255, 0.6);
+    min-width: 3rem;
+    height: 3rem;
+    margin: 0.143rem;
+    transition: box-shadow 0.2s;
+    border-radius: 6px;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: rgba(196, 181, 253, 0.16);
+    border-color: rgba(196, 181, 253, 0.16);
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: transparent;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.p-treetable .p-paginator-top {
+    border-width: 1px 0 1px 0;
+    border-radius: 0;
+}
+
+.p-treetable .p-paginator-bottom {
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+}

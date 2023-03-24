@@ -1,0 +1,11 @@
+<div class="pulse"
+    [ngStyle]="{
+        'bottom' : getCssValues()['bottom'],
+        'left' : getCssValues()['left'],
+        'width' : getCssValues()['sizes'],
+        'height' : getCssValues()['sizes'],
+        'font-size' : getCssValues()['font-size'],
+        'animation-delay': userDevice.isXLarge
+            ? '0s'
+            : '5s'
+    }"><i class="bi bi-arrow-down-circle-fill"></i></div>

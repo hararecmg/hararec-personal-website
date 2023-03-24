@@ -1,8 +1,13 @@
-import { Orientation, Size, Color } from '../types/pexel';
+import { Orientation, Size, Color, PhotoEndPoint } from '../types/pexel';
 import { Language } from '../types/language';
 
+export interface Pexel {
+    end_point?: PhotoEndPoint;
+    pexel_request?: PexelRequest;
+}
+
 export interface PexelRequest {
-    query: string;
+    query?: string;
     orientation?: Orientation;
     size?: Size;
     color?: Color;

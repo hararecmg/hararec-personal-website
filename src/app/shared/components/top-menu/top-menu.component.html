@@ -1,1 +1,42 @@
-<p-megaMenu [model]="items"></p-megaMenu>
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="40" class="mr-2">
+    </ng-template>
+    <ng-template pTemplate="end">
+        <button pButton pRipple type="button" icon="bi bi-facebook" class="p-button-rounded p-button-outlined"></button>
+        <button pButton pRipple type="button" icon="bi bi-instagram"
+            class="p-button-rounded p-button-secondary p-button-outlined"></button>
+        <button pButton pRipple type="button" icon="bi bi-twitter"
+            class="p-button-rounded p-button-success p-button-outlined"></button>
+        <button pButton pRipple type="button" icon="bi bi-linkedin"
+            class="p-button-rounded p-button-info p-button-outlined"></button>
+        <button pButton pRipple type="button" icon="bi bi-github"
+            class="p-button-rounded p-button-warning p-button-outlined"></button>
+        <button pButton pRipple type="button" icon="bi bi-heart"
+            class="p-button-rounded p-button-help p-button-outlined"></button>
+        <span class="p-input-icon-left">
+            <i class="bi bi-search"></i>
+            <input type="text" pInputText placeholder="Search" [(ngModel)]="value" />
+        </span>
+    </ng-template>
+</p-menubar>
+<!-- [ngStyle]="{'position': 'fixed', 'bottom': '0px', 'width': '100%'}" -->
+<!-- <div style="background-color: black;">
+    <p-rating [(ngModel)]="val" iconOnClass="bi bi-star-fill" iconOffClass="bi bi-star">
+    </p-rating>
+</div>
+<p-tree [value]="files" selectionMode="single" (onNodeSelect)="selec($event)"></p-tree>
+<p-button (click)="showMaximizableDialog()" icon="pi pi-external-link" label="Show"></p-button>
+<p-dialog header="Godfather I" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '50vw'}"
+    [maximizable]="true" [draggable]="false" [resizable]="false">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <ng-template pTemplate="footer">
+        <p-button icon="bi bi-check" (click)="displayMaximizable=false" label="Ok"
+            styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog> -->

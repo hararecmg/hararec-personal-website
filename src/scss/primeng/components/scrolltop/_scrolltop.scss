@@ -1,0 +1,20 @@
+.p-scrolltop {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.p-scrolltop.p-link {
+    background: rgba(196, 181, 253, 0.16);
+}
+
+.p-scrolltop.p-link:hover {
+    background: rgba(196, 181, 253, 0.3616);
+}
+
+.p-scrolltop .p-scrolltop-icon {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.87);
+}

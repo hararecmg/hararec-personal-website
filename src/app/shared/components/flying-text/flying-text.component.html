@@ -1,0 +1,19 @@
+<div class="text"
+    [ngStyle]="{
+        'width': width,
+        'min-height': minHeight,
+        'background': background,
+        'font-size': fontSize,
+        'top': top,
+        'left': left,
+        'text-align': textAlign,
+        'padding-left': padding,
+        'padding-right': padding
+    }">
+    <span 
+        *ngFor="let char of textArray" 
+        class="char" 
+        style="position: relative; display: inline-block;"
+        [ngStyle]="{ 'color': char == ' ' ? 'transparent' : 'inherit'}"
+    >{{ char == ' ' ? '+' : char }}</span>
+</div>
