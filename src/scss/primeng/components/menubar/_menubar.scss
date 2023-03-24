@@ -3,7 +3,14 @@
     background: #091a32;
     color: rgba(255, 255, 255, 0.87);
     border: 1px solid #0b213f;
-    border-radius: 6px;
+    // border-radius: 6px;
+    position: fixed;
+    // top: -100px;
+    // opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .p-menubar .p-menuitem-link {
@@ -166,9 +173,9 @@
 }
 
 @media screen and (max-width: 960px) {
-    .p-menubar {
-        position: relative;
-    }
+    // .p-menubar {
+    //     position: relative;
+    // }
 
     .p-menubar .p-menubar-button {
         display: flex;
