@@ -7,6 +7,7 @@ import { PrimengModule } from '../primeng/primeng.module';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { DotsMenuComponent } from './components/dots-menu/dots-menu.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { FlyingTextComponent } from './components/flying-text/flying-text.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { LogoComponent } from './components/logo/logo.component';
     ContactFormComponent,
     DotsMenuComponent,
     LogoComponent,
+    FlyingTextComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { LogoComponent } from './components/logo/logo.component';
     BottomMenuComponent,
     ContactFormComponent,
     DotsMenuComponent,
+    FlyingTextComponent,
   ]
 })
 export class SharedModule { }
