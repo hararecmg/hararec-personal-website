@@ -8,6 +8,8 @@
 import { Component, OnInit } from '@angular/core';
 import { interval, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Device } from 'src/app/shared/interfaces/device';
+import { DeviceService } from 'src/app/shared/services/global/device.service';
 
 @Component({
   selector: 'app-welcome',
@@ -17,10 +19,14 @@ import { takeUntil } from 'rxjs/operators';
 export class WelcomeComponent implements OnInit {
 
   openState: boolean = false;
+  userDevice!: Device;
   private destroy$ = new Subject<void>();
 
+  constructor(private device: DeviceService) {}
+
   ngOnInit() {
-    interval(1000)
+    this.userDevice = this.device.device;
+    interval(500)
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => {
         this.openState = true;
@@ -30,6 +36,61 @@ export class WelcomeComponent implements OnInit {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  getResponsiveStyles(): {[key: string]: string} {
+    return {
+      'top-flying-text': this.userDevice.isHandset
+        ? '170px'
+        : this.userDevice.isTablet
+          ? '120px'
+          : this.userDevice.isWeb || this.userDevice.isXLarge
+            ? '100px'
+            : '200px',
+      'text-align-flying-text': this.userDevice.isHandset || this.userDevice.isTablet
+        ? 'center'
+        : this.userDevice.isWeb || this.userDevice.isXLarge
+            ? 'left'
+            : 'center',
+      'padding-flying-text': this.userDevice.isHandset || this.userDevice.isTablet
+        ? '35px'
+        : this.userDevice.isWeb
+            ? '100px'
+            : this.userDevice.isXLarge
+              ? '200px'
+              : 'auto',
+      'width-flying-text': this.userDevice.isHandset || this.userDevice.isTablet
+        ? '100%'
+        : this.userDevice.isWeb || this.userDevice.isXLarge
+            ? '60%'
+            : '100%',
+      'font-size-flying-text': this.userDevice.isHandset
+      ? '2rem'
+      : this.userDevice.isTablet
+        ? '3.5rem'
+        : this.userDevice.isWeb
+          ? '5.5rem'
+          : this.userDevice.isXLarge
+            ? '7.5rem'
+            : '3.5rem',
+      'width-photo': this.userDevice.isHandset || this.userDevice.isTablet
+      ? '100vw'
+      : this.userDevice.isWeb || this.userDevice.isXLarge
+          ? '40vw'
+          : '100vw', 
+      'min-height-photo': this.userDevice.isHandset
+      ? '60vh'
+      : this.userDevice.isTablet
+        ? '40vh'
+        : this.userDevice.isWeb || this.userDevice.isXLarge
+          ? 'calc(100vh - 100px)'
+          : '40vh', 
+      'left-scroll-bottom': this.userDevice.isHandset || this.userDevice.isTablet
+      ? '10%'
+      : this.userDevice.isWeb || this.userDevice.isXLarge
+          ? '50%'
+          : '10%', 
+    }
   }
 
 }

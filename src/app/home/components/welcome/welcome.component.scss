@@ -1,7 +1,20 @@
+.state {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('../../../../assets/icons/stars.gif');
+    // background-color: var(--primary-color);
+    // background-image: linear-gradient(var(--vermilion), var(--turquoise));
+    // background-repeat: no-repeat;
+}
+
 .svg {
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 60%;
     transform: translate(-50%, -50%);
 }
 
@@ -11,7 +24,7 @@
 
 path {
     fill: none;
-    stroke: black;
+    stroke: var(--navy-blue);
     stroke-width: 150px;
 }
 
@@ -30,7 +43,7 @@ path.path-center {
 }
 
 .open-state .path-center {
-    stroke-width: 400px;
+    stroke-width: 0;
 }
 
 .path-borders:nth-child(6) {
