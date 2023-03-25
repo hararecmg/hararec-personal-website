@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 // Forms
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -40,7 +40,7 @@ import { AnimateModule } from 'primeng/animate';
 
 @NgModule({
   exports: [
-    FormsModule,
+    ReactiveFormsModule,
     InputTextModule,
     InputTextareaModule,
     RatingModule,
