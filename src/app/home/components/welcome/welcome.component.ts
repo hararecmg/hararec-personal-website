@@ -65,7 +65,7 @@ export class WelcomeComponent implements OnInit {
             ? '60%'
             : '100%',
       'font-size-flying-text': this.userDevice.isHandset
-      ? '2rem'
+      ? '3rem'
       : this.userDevice.isTablet
         ? '3.5rem'
         : this.userDevice.isWeb
