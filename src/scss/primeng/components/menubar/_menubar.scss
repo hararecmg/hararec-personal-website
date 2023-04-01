@@ -1,37 +1,40 @@
 .p-menubar {
+    background-color: transparent;
+    background-image: linear-gradient(to left, #091a32, var(--navy-blue), var(--turquoise), var(--magenta), transparent, transparent, transparent);
+    background-size: 300% 100%;
+    transition: background-position 0.5s ease-in-out;
     padding: 0.5rem;
-    background: #091a32;
-    color: rgba(255, 255, 255, 0.87);
-    border: 1px solid #0b213f;
-    // border-radius: 6px;
+    color: var(--accent-color);
     position: fixed;
-    // top: -100px;
-    // opacity: 0;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
 }
 
+.scrolled .p-menubar {
+    background-position: 100% 0;
+}
+
 .p-menubar .p-menuitem-link {
     padding: 0.75rem 1.25rem;
-    color: rgba(255, 255, 255, 0.87);
+    color: var(--accent-color);
     border-radius: 0;
     transition: box-shadow 0.2s;
     user-select: none;
 }
 
 .p-menubar .p-menuitem-link .p-menuitem-text {
-    color: rgba(255, 255, 255, 0.87);
+    color: var(--snow);
 }
 
 .p-menubar .p-menuitem-link .p-menuitem-icon {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--accent-color);
     margin-right: 0.5rem;
 }
 
 .p-menubar .p-menuitem-link .p-submenu-icon {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--accent-color);
 }
 
 .p-menubar .p-menuitem-link:not(.p-disabled):hover {
