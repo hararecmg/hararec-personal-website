@@ -55,7 +55,7 @@ export class ScrollingParallaxComponent implements OnInit, AfterViewInit, OnDest
     this.pexelSubs = this.pexels.searchPhotos({
       end_point: 'search',
       pexel_request: {
-        query: 'natural landscapes',
+        query: 'office and work',
         per_page: this.parallaxItems.length,
       }
     }).subscribe(resp => {
