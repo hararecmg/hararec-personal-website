@@ -32,4 +32,8 @@ export class ThemeService {
   private getBrowserTheme(): string {
     return this.mediaMatcher.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
+
+  get currentTheme(): string {
+    return this.theme;
+  }
 }

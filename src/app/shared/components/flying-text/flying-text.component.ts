@@ -20,7 +20,7 @@ export class FlyingTextComponent implements AfterViewInit {
   @Input('delay') delay: string = '2.5';
 
   ngAfterViewInit() {
-    const chars = gsap.utils.toArray('.char');
+    const words = gsap.utils.toArray('.word');
     const tl = gsap.timeline({
       repeat: -1,
       repeatDelay: 1,
@@ -31,7 +31,7 @@ export class FlyingTextComponent implements AfterViewInit {
     tl.set('.text', {
       perspective: 400,
     });
-    tl.from(chars, {
+    tl.from(words, {
       duration: 1.5,
       opacity: 0,
       x: gsap.utils.random(-300, 300, true),
@@ -49,7 +49,7 @@ export class FlyingTextComponent implements AfterViewInit {
   }
 
   get textArray(): string[] {
-    return this.text.replace(/\/(.*)\//g, '').split('');
+    return this.text.replace(/\/(.*)\//g, '').trim().split(' ');
   }
 
 }

@@ -2,7 +2,10 @@
     class="navigation" 
     (click)="toggleMenu()" 
     [ngClass]="{'active': isActive}">
-    <div 
+    <div [ngClass]="{
+            'mobile': userDevice.isHandset, 
+            'tablet': userDevice.isTablet 
+        }"
         *ngFor="let item of iconsClass; let i = index" 
         [ngStyle]="{'--i': i, '--x': item.x, '--y': item.y}">
         <i [ngClass]="item.class"></i>

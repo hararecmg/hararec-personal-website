@@ -8,6 +8,7 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { DotsMenuComponent } from './components/dots-menu/dots-menu.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { FlyingTextComponent } from './components/flying-text/flying-text.component';
+import { ThemeButtonComponent } from './components/theme-button/theme-button.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FlyingTextComponent } from './components/flying-text/flying-text.compon
     DotsMenuComponent,
     LogoComponent,
     FlyingTextComponent,
+    ThemeButtonComponent,
   ],
   imports: [
     CommonModule,

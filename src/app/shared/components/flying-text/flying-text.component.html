@@ -10,10 +10,12 @@
         'padding-left': padding,
         'padding-right': padding
     }">
-    <span 
-        *ngFor="let char of textArray" 
-        class="char" 
-        style="position: relative; display: inline-block;"
-        [ngStyle]="{ 'color': char == ' ' ? 'transparent' : 'inherit'}"
-    >{{ char == ' ' ? '+' : char }}</span>
+    <ng-container *ngFor="let char of textArray">
+        <span 
+            class="word" 
+            style="position: relative; display: inline-block;"
+        >{{ char }}</span>
+        <span class="word" 
+            style="color: transparent; position: relative; display: inline-block;">+</span>
+    </ng-container>
 </div>

@@ -3,26 +3,27 @@
     // top: 0;
     // right: 0;
     position: relative;
-    width: 70px;
-    height: 70px;
-    background-color: #212532;
-    border-radius: 10px;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--accent-color);
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.5s;
+    transition: 0.7s;
     transition-delay: 0.8s;
+    z-index: 9000;
 
     &.active {
-        width: 200px;
-        height: 200px;
+        width: 100vw;
+        height: 100vw;
         transition-delay: 0s;
 
         div {
-            transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
-            width: 50px;
-            height: 50px;
+            transform: translate(calc(6.5rem * var(--x)), calc(6.5rem * var(--y)));
+            width: 4rem;
+            height: 4rem;
             background-color: #333849;
             display: flex;
             justify-content: center;
@@ -38,29 +39,44 @@
 
             i, span {
                 font-size: 1.35em;
-                color: #fff;
-                transition-delay: 0.8s;
+                color: var(--primary-color);
+                transition-delay: 1s;
             }
 
             span {
                 font-size: 0.5em;
             }
         }
+
+        .mobile {
+            width: 4rem;
+            height: 4rem; 
+        }
+
+        .tablet {
+            width: 8.5rem;
+            height: 8.5rem;
+            transform: translate(calc(12rem * var(--x)), calc(12rem * var(--y)));
+
+            i, span {
+                font-size: 1.8em;
+            } 
+        }
     }
 
     div {
         position: absolute;
-        width: 7px;
-        height: 7px;
-        background-color: #fff;
+        width: 4px;
+        height: 4px;
+        background-color: var(--primary-color);
         border-radius: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+        transform: translate(calc(7px * var(--x)), calc(7px * var(--y)));
         transition: transform 0.5s, width 0.5s, height 0.5s, background-color 0.5s;
-        transition-delay: calc(0.1s * var(--i));
+        transition-delay: calc(0.1s * var(--i) + 0.3s);
 
         i, span {
             font-size: 0em;

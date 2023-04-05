@@ -1,14 +1,17 @@
+import { Device } from '../../interfaces/device';
+import { DeviceService } from '../../services/global/device.service';
 import { MenuIcons } from './../../interfaces/menu-icons';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dots-menu',
   templateUrl: './dots-menu.component.html',
   styleUrls: ['./dots-menu.component.scss']
 })
-export class DotsMenuComponent {
+export class DotsMenuComponent implements OnInit {
 
   isActive = false;
+  userDevice!: Device;
   iconsClass: MenuIcons[] = [
     {
       name: 'porfolio',
@@ -65,6 +68,12 @@ export class DotsMenuComponent {
       y: 0 
     },
   ];
+
+  constructor(private device: DeviceService) {}
+
+  ngOnInit(): void {
+    this.userDevice = this.device.device;
+  }
 
   toggleMenu() {
     this.isActive = !this.isActive;

@@ -1,6 +1,8 @@
-import { Component, OnInit, Renderer2, RendererFactory2, Inject, AfterViewChecked, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Renderer2, RendererFactory2, Inject, AfterViewChecked, AfterViewInit, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { DeviceService } from 'src/app/shared/services/global/device.service';
 import { MenuItem, TreeNode } from 'primeng/api';
+import { Device } from '../../interfaces/device';
 
 @Component({
   selector: 'app-top-menu',
@@ -10,22 +12,28 @@ import { MenuItem, TreeNode } from 'primeng/api';
 export class TopMenuComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
   items: MenuItem[] = [];
+  themeName: string = '';
   value: string = '';
   val: number = 4;
   files!: TreeNode<string>[];
+  isActive: boolean = false;
+  isScrolled: boolean = false;
   elements!: NodeListOf<Element>;
+  userDevice!: Device;
   displayMaximizable: boolean = false;
   private renderer: Renderer2;
 
   constructor(
     private rendererFactory: RendererFactory2,
+    private device: DeviceService,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
   }
 
-  selec(event: PointerEvent): void {
-    console.log(event);
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = 0 < window.scrollY;
   }
 
   showMaximizableDialog() {
@@ -33,6 +41,7 @@ export class TopMenuComponent implements OnInit, AfterViewInit, AfterViewChecked
   }
 
   ngOnInit(): void {
+    this.userDevice = this.device.device;
     this.files = [
       {
         label: 'Documents',
@@ -139,130 +148,51 @@ export class TopMenuComponent implements OnInit, AfterViewInit, AfterViewChecked
     ];
     this.items = [
       {
-        label: 'File',
-        icon: 'bi bi-file-earmark',
+        label: 'Acerca de mi',
+        icon: 'bi bi-person-circle',
         items: [
           {
-            label: 'New',
-            icon: 'bi bi-plus-circle',
+            label: 'Desarrollador',
+            icon: 'bi bi-code-slash',
             items: [
               {
-                label: 'Bookmark',
-                icon: 'pi pi-fw pi-bookmark'
+                label: 'Frontend',
+                icon: 'bi bi-window-fullscreen'
               },
               {
-                label: 'Video',
-                icon: 'pi pi-fw pi-video'
+                label: 'Backend',
+                icon: 'bi bi-pc-display'
               },
 
             ]
           },
           {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-trash'
-          },
-          {
-            separator: true
-          },
-          {
-            label: 'Export',
-            icon: 'pi pi-fw pi-external-link'
-          }
-        ]
-      },
-      {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
-        items: [
-          {
-            label: 'Left',
-            icon: 'pi pi-fw pi-align-left'
-          },
-          {
-            label: 'Right',
-            icon: 'pi pi-fw pi-align-right'
-          },
-          {
-            label: 'Center',
-            icon: 'pi pi-fw pi-align-center'
-          },
-          {
-            label: 'Justify',
-            icon: 'pi pi-fw pi-align-justify'
-          },
-
-        ]
-      },
-      {
-        label: 'Users',
-        icon: 'pi pi-fw pi-user',
-        items: [
-          {
-            label: 'New',
-            icon: 'pi pi-fw pi-user-plus',
-
-          },
-          {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-user-minus',
-
-          },
-          {
-            label: 'Search',
-            icon: 'pi pi-fw pi-users',
+            label: 'Matemático',
+            icon: 'bi bi-infinity',
             items: [
               {
-                label: 'Filter',
-                icon: 'pi pi-fw pi-filter',
-                items: [
-                  {
-                    label: 'Print',
-                    icon: 'pi pi-fw pi-print'
-                  }
-                ]
+                label: 'Docente',
+                icon: 'bi bi-journal-bookmark',
               },
               {
-                icon: 'pi pi-fw pi-bars',
-                label: 'List'
-              }
+                label: 'Investigador',
+                icon: 'bi bi-clipboard-heart-fill',
+              },
             ]
           }
         ]
       },
       {
-        label: 'Events',
-        icon: 'pi pi-fw pi-calendar',
-        items: [
-          {
-            label: 'Edit',
-            icon: 'pi pi-fw pi-pencil',
-            items: [
-              {
-                label: 'Save',
-                icon: 'pi pi-fw pi-calendar-plus'
-              },
-              {
-                label: 'Delete',
-                icon: 'pi pi-fw pi-calendar-minus'
-              },
-
-            ]
-          },
-          {
-            label: 'Archieve',
-            icon: 'pi pi-fw pi-calendar-times',
-            items: [
-              {
-                label: 'Remove',
-                icon: 'pi pi-fw pi-calendar-minus'
-              }
-            ]
-          }
-        ]
+        label: 'Portafolio',
+        icon: 'bi bi-pc-display-horizontal',
       },
       {
-        label: 'Quit',
-        icon: 'pi pi-fw pi-power-off'
+        label: 'Blog',
+        icon: 'bi bi-journal-bookmark-fill',
+      },
+      {
+        label: 'Contacto',
+        icon: 'bi bi-envelope'
       }
     ];
   }
@@ -287,4 +217,13 @@ export class TopMenuComponent implements OnInit, AfterViewInit, AfterViewChecked
       }
     });
   }
+
+  changeMenuActive(seconds: number) {
+    !this.isActive
+      ? this.isActive = true
+      : setTimeout(() => {
+        this.isActive = false;
+      }, seconds * 1000);
+  }
+
 }

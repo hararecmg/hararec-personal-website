@@ -2,9 +2,10 @@
     position: relative;
     margin: 0 auto;
     border-style: solid;
-    border-color: #fff;
-    background-color: #faf7af;
+    border-color: var(--primary-color);
+    background-color: var(--turquoise);
     border-radius: 50%;
+    transition: border-color 0.5s;
 
     img {
         position: absolute;
