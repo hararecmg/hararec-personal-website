@@ -1,63 +1,63 @@
 <div [ngClass]="{'scrolled': isScrolled }">
-    <p-menubar [model]="items">
+    <p-menubar [model]="menuItems">
         <ng-template pTemplate="start">
             <a [routerLink]="['/home']" *ngIf="!isActive">
                 <app-logo [scale]="0.15"></app-logo>
             </a>
         </ng-template>
-    <ng-template pTemplate="end">
-        <div class="menu-items-end">
-            <a href="https://github.com/hararecmg" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-                class="me-2"
-                pTooltip="github" 
-                tooltipPosition="bottom"
-                *ngIf="!userDevice.isHandset && !isActive">
-                <button pButton pRipple type="button" icon="bi bi-github"
-                class="p-button-rounded p-button-success p-button-outlined"></button>
-            </a>
-            <a href="https://www.linkedin.com/in/hararec-medina-gonzález" 
+        <ng-template pTemplate="end">
+            <div class="menu-items-end">
+                <a href="https://github.com/hararecmg" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="me-2"
-                pTooltip="linkedin" 
-                tooltipPosition="bottom"
-                *ngIf="!userDevice.isHandset && !isActive">
-                <button pButton pRipple type="button" icon="bi bi-linkedin"
-                    class="p-button-rounded p-button-warning p-button-outlined"></button>
+                    class="me-2"
+                    pTooltip="github" 
+                    tooltipPosition="bottom"
+                    *ngIf="!userDevice.isHandset && !isActive">
+                    <button pButton pRipple type="button" icon="bi bi-github"
+                    class="p-button-rounded p-button-success p-button-outlined"></button>
                 </a>
-                <a href="https://www.twitter.com/HararecMG" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="me-2"
-                pTooltip="twitter" 
-                tooltipPosition="bottom"
-                *ngIf="!userDevice.isHandset && !isActive">
-                <button pButton pRipple type="button" icon="bi bi-twitter"
-                    class="p-button-rounded p-button-info p-button-outlined"></button>
+                <a href="https://www.linkedin.com/in/hararec-medina-gonzález" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="me-2"
+                    pTooltip="linkedin" 
+                    tooltipPosition="bottom"
+                    *ngIf="!userDevice.isHandset && !isActive">
+                    <button pButton pRipple type="button" icon="bi bi-linkedin"
+                        class="p-button-rounded p-button-warning p-button-outlined"></button>
+                    </a>
+                    <a href="https://www.twitter.com/HararecMG" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="me-2"
+                    pTooltip="twitter" 
+                    tooltipPosition="bottom"
+                    *ngIf="!userDevice.isHandset && !isActive">
+                    <button pButton pRipple type="button" icon="bi bi-twitter"
+                        class="p-button-rounded p-button-info p-button-outlined"></button>
+                    </a>
+                <a href="https://www.facebook.com/hararec.medinagonzalez?mibextid=ZbWKwL" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="me-2"
+                    pTooltip="facebook" 
+                    tooltipPosition="bottom"
+                    *ngIf="!userDevice.isHandset && !isActive">
+                    <button pButton pRipple type="button" icon="bi bi-facebook"
+                    class="p-button-rounded p-button-outlined"></button>
                 </a>
-            <a href="https://www.facebook.com/hararec.medinagonzalez?mibextid=ZbWKwL" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="me-2"
-                pTooltip="facebook" 
-                tooltipPosition="bottom"
-                *ngIf="!userDevice.isHandset && !isActive">
-                <button pButton pRipple type="button" icon="bi bi-facebook"
-                class="p-button-rounded p-button-outlined"></button>
-            </a>
-            <div class="me-2" 
-                *ngIf="!userDevice.isHandset && !isActive">
-                <app-theme-button></app-theme-button>
+                <div class="me-2" 
+                    *ngIf="!userDevice.isHandset && !isActive">
+                    <app-theme-button></app-theme-button>
+                </div>
+                <div class="me-2">
+                    <app-dots-menu *ngIf="userDevice.isHandset || userDevice.isTablet"
+                    (click)="changeMenuActive(1.5)"></app-dots-menu>
+                </div>
             </div>
-            <div class="me-2">
-                <app-dots-menu *ngIf="userDevice.isHandset || userDevice.isTablet"
-                (click)="changeMenuActive(1.5)"></app-dots-menu>
-            </div>
-        </div>
-    </ng-template>
-</p-menubar>
+        </ng-template>
+    </p-menubar>
 </div>
 <!-- [ngStyle]="{'position': 'fixed', 'bottom': '0px', 'width': '100%'}" -->
 <!-- <div style="background-color: black;">
