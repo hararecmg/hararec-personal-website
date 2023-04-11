@@ -9,6 +9,7 @@ import { DotsMenuComponent } from './components/dots-menu/dots-menu.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { FlyingTextComponent } from './components/flying-text/flying-text.component';
 import { ThemeButtonComponent } from './components/theme-button/theme-button.component';
+import { PageUnderDevelopmentComponent } from './components/page-under-development/page-under-development.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ThemeButtonComponent } from './components/theme-button/theme-button.com
     LogoComponent,
     FlyingTextComponent,
     ThemeButtonComponent,
+    PageUnderDevelopmentComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,7 @@ import { ThemeButtonComponent } from './components/theme-button/theme-button.com
     ContactFormComponent,
     DotsMenuComponent,
     FlyingTextComponent,
+    PageUnderDevelopmentComponent,
   ]
 })
 export class SharedModule { }
