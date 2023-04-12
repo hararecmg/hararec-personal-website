@@ -11,6 +11,7 @@ import { FlyingTextComponent } from './components/flying-text/flying-text.compon
 import { ThemeButtonComponent } from './components/theme-button/theme-button.component';
 import { PageUnderDevelopmentComponent } from './components/page-under-development/page-under-development.component';
 import { SocialMediaLinkComponent } from './components/social-media-link/social-media-link.component';
+import { TreeMenuComponent } from './components/tree-menu/tree-menu.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SocialMediaLinkComponent } from './components/social-media-link/social-
     ThemeButtonComponent,
     PageUnderDevelopmentComponent,
     SocialMediaLinkComponent,
+    TreeMenuComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,7 @@ import { SocialMediaLinkComponent } from './components/social-media-link/social-
     DotsMenuComponent,
     FlyingTextComponent,
     PageUnderDevelopmentComponent,
+    TreeMenuComponent,
   ]
 })
 export class SharedModule { }
