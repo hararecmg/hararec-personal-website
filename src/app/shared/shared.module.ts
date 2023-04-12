@@ -11,6 +11,7 @@ import { FlyingTextComponent } from './components/flying-text/flying-text.compon
 import { ThemeButtonComponent } from './components/theme-button/theme-button.component';
 import { PageUnderDevelopmentComponent } from './components/page-under-development/page-under-development.component';
 import { SocialMediaLinkComponent } from './components/social-media-link/social-media-link.component';
+import { CanvasMenuComponent } from './components/canvas-menu/canvas-menu.component';
 import { TreeMenuComponent } from './components/tree-menu/tree-menu.component';
 
 
@@ -25,6 +26,7 @@ import { TreeMenuComponent } from './components/tree-menu/tree-menu.component';
     ThemeButtonComponent,
     PageUnderDevelopmentComponent,
     SocialMediaLinkComponent,
+    CanvasMenuComponent,
     TreeMenuComponent,
   ],
   imports: [
