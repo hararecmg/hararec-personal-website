@@ -1,0 +1,32 @@
+<div>
+    <p-sidebar [(visible)]="isVisible" 
+        [baseZIndex]="5000" 
+        [autoZIndex]="false"
+        [transitionOptions]="'500ms'">
+        <ng-template pTemplate="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <button pButton pRipple type="button" 
+                            icon="bi bi-arrow-left-circle-fill"
+                            class="p-button-info p-button-outlined" 
+                            (click)="toggleMenu()"></button>
+                    </div>
+                </div>
+                <div class="row mt-4"
+                    *ngIf="userDevice.isHandset">
+                    <div class="col">
+                        <app-social-media-link></app-social-media-link>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="content">
+            <app-tree-menu (onSelecting)="toggleMenu($event)"></app-tree-menu>
+        </ng-template>
+    </p-sidebar>
+    <p-toggleButton 
+        [(ngModel)]="isVisible" 
+        [onIcon]="'bi bi-three-dots-vertical'" 
+        [offIcon]="'bi bi-list'"></p-toggleButton>
+</div>

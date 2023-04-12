@@ -1,5 +1,5 @@
 import { ThemeService } from './../../services/global/theme.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class ThemeButtonComponent implements OnInit {
 
+  @Input('customClass') customClass: string = '';
   isChecked: boolean = false;
   themeForm!: FormGroup;
 
