@@ -1,0 +1,14 @@
+<div class="menu-items">
+    <a *ngFor="let link of links" 
+        [href]="link.url"
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="me-2"
+        [pTooltip]="link.tooltip" 
+        tooltipPosition="bottom">
+        <button pButton pRipple type="button" 
+            class="p-button-rounded p-button-outlined"
+            [icon]="link.icon"
+            [ngClass]="link.button_class"></button>
+    </a>
+</div>

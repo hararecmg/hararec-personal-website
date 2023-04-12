@@ -10,6 +10,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { FlyingTextComponent } from './components/flying-text/flying-text.component';
 import { ThemeButtonComponent } from './components/theme-button/theme-button.component';
 import { PageUnderDevelopmentComponent } from './components/page-under-development/page-under-development.component';
+import { SocialMediaLinkComponent } from './components/social-media-link/social-media-link.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { PageUnderDevelopmentComponent } from './components/page-under-developme
     FlyingTextComponent,
     ThemeButtonComponent,
     PageUnderDevelopmentComponent,
+    SocialMediaLinkComponent,
   ],
   imports: [
     CommonModule,
