@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-page-under-development',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-under-development.component.scss']
 })
 export class PageUnderDevelopmentComponent {
+
+  constructor(private location: Location) { }
+
+  goBack() {
+    this.location.back();
+  }
 
 }

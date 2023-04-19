@@ -7,20 +7,26 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <img alt="Card" src="../../../../assets/icons/trex-chrome-game.png" style="max-height: 40vh; width: 80%;" />
+                                <img alt="Card" src="../../../../assets/icons/trex-chrome-game.png" style="max-height: 30vh; width: 60%;" />
                             </div>
                         </div>
                     </div>
                 </ng-template>
                 <p>
-                    Estamos emocionados de anunciar que estamos trabajando en nuevas secciones para nuestro sitio web. Actualmente estamos implementando nuevas rutas de navegación que aún no tienen contenido. Estamos trabajando arduamente para desarrollar contenido interesante y valioso para estas secciones, y esperamos poder compartirlo con ustedes muy pronto. Les agradecemos su paciencia mientras seguimos mejorando nuestro sitio web y agregando nuevas funciones. ¡Manténganse al tanto para más actualizaciones emocionantes!
+                    Actualmente estamos trabajando en nuevas secciones y esperamos compartirlas pronto. Gracias por su paciencia mientras mejoramos nuestro sitio y agregamos nuevas funciones. ¡Manténganse al tanto para más actualizaciones!
                 </p>
-                <ng-template pTemplate="footer">
-                    <button pButton pRipple type="button" icon="bi bi-arrow-left-circle-fill"
-                            class="p-button-info p-button-outlined"></button>
-                    <!-- <p-button label="Save" icon="bi bi-arrow-left-circle-fill"></p-button> -->
-                    <!-- <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button> -->
-                </ng-template>
+                <div class="footer">
+                            <button 
+                            pButton 
+                            pRipple 
+                            type="button"
+                            label="Regresar" 
+                            icon="bi bi-arrow-left-circle-fill"
+                            class="p-button-info p-button-outlined"
+                            (click)="goBack()"></button>
+                </div>
+                <!-- <ng-template pTemplate="footer">
+                </ng-template> -->
             </p-card>
         </div>
     </div>
