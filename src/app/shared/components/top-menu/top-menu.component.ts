@@ -1,29 +1,38 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, HostListener, Renderer2, RendererFactory2, Inject, AfterViewInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { NavigationEnd, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { DeviceService } from 'src/app/shared/services/global/device.service';
 import { Device } from '../../interfaces/device';
+import { ThemeService } from '../../services/global/theme.service';
 
 @Component({
   selector: 'app-top-menu',
   templateUrl: './top-menu.component.html',
   styleUrls: ['./top-menu.component.scss']
 })
-export class TopMenuComponent implements OnInit {
+export class TopMenuComponent implements OnInit, AfterViewInit {
 
+  private renderer: Renderer2;
   isScrolled: boolean = false;
+  haveViewInited: boolean = false;
+  currentTheme: string = '';
+  currentPath: string = '';
   userDevice!: Device;
   menuItems!: MenuItem[];
+  menuIcons!: NodeListOf<Element>;
+  menuTextIcons!: NodeListOf<Element>;
 
   constructor(
     private device: DeviceService,
     private router: Router,
-  ) { }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isScrolled = 0 < window.scrollY;
+    private rendererFactory: RendererFactory2,
+    private theme: ThemeService,
+    @Inject(DOCUMENT) private document: Document
+  ) {
+    this.renderer = this.rendererFactory.createRenderer(null, null);
   }
+
 
   ngOnInit(): void {
     this.userDevice = this.device.device;
@@ -97,6 +106,26 @@ export class TopMenuComponent implements OnInit {
         icon: 'bi bi-envelope'
       }
     ];
+    this.theme.themeObserver.subscribe(theme => {
+      this.currentTheme = theme;
+      if (this.haveViewInited && !this.device.device.isHandset && !this.device.device.isTablet) {
+        this.changeMenuItemsColor(this.isScrolled, this.currentPath, theme);
+      }
+    });
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentPath = event.url;
+        if (this.haveViewInited && !this.device.device.isHandset && !this.device.device.isTablet) {
+          this.changeMenuItemsColor(this.isScrolled, event.url, this.currentTheme);
+        }
+      }
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.haveViewInited = true;
+    this.menuIcons = this.document.querySelectorAll('span.p-menuitem-icon.bi');
+    this.menuTextIcons = this.document.querySelectorAll('span.p-menuitem-text');
   }
 
   findRoute(base: string, ...params: string[]) {
@@ -104,6 +133,34 @@ export class TopMenuComponent implements OnInit {
     this.router.navigate([`/${base}`, ...params])
       .then(() => console.log(this.router.url.split(/\\|\//)[1]))
       .catch(() => this.router.navigate(['/']));
+  }
+
+  changeMenuItemsColor(scroll: boolean, path: string, theme: string) {
+
+    if (!scroll && path !== '/home' && path !== '/' && theme === 'light') {
+      this.menuIcons.forEach(element => {
+        this.renderer.setStyle(element, 'color', '#000');
+      });
+      this.menuTextIcons.forEach(element => {
+        this.renderer.setStyle(element, 'color', '#000');
+      });
+    } else {
+      this.menuIcons.forEach(element => {
+        this.renderer.setStyle(element, 'color', '#fff');
+      });
+      this.menuTextIcons.forEach(element => {
+        this.renderer.setStyle(element, 'color', '#fff');
+      });
+    }
+
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = 0 < window.scrollY;
+    if (this.haveViewInited && !this.device.device.isHandset && !this.device.device.isTablet) {
+      this.changeMenuItemsColor(this.isScrolled, this.currentPath, this.currentTheme);
+    }
   }
 
 }
