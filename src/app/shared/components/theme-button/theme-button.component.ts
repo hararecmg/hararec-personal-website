@@ -19,7 +19,7 @@ export class ThemeButtonComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.isChecked = this.themeService.currentTheme !== 'dark'
+    this.isChecked = this.themeService.theme !== 'dark'
     this.themeForm = this.fb.group({
       checked: this.isChecked,
     });
