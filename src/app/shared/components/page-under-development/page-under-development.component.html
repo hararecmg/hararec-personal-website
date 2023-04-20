@@ -2,33 +2,47 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <p-card header="Seguimos mejorando nuestro sitio web" subheader="Esta sección sigue en desarrollo" [style]="{ width: '100%', marginTop: '20vh' }">
+            <p-card header="Seguimos mejorando nuestro sitio web" subheader="Esta sección sigue en desarrollo"
+                [style]="{ width: '100%', marginTop: '20vh' }">
                 <ng-template pTemplate="header">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <img alt="Card" src="../../../../assets/icons/trex-chrome-game.png" style="max-height: 30vh; width: 60%;" />
-                            </div>
-                        </div>
-                    </div>
+                    <seccion *ngIf="!isLoading; else loading" [ngStyle]="{'background-image': imageAttributes['src']}"
+                        class="background-image">
+                        <span class="pexels">
+                            <span>
+                                Foto de
+                                <a [href]="imageAttributes['photographer_url']" target="_blank"
+                                    rel="noopener noreferrer">
+                                    {{imageAttributes['photographer']}}
+                                </a>
+                                proporcionada por
+                                <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer">
+                                    Pexels
+                                </a>
+                            </span>
+                        </span>
+                    </seccion>
                 </ng-template>
                 <p>
-                    Actualmente estamos trabajando en nuevas secciones y esperamos compartirlas pronto. Gracias por su paciencia mientras mejoramos nuestro sitio y agregamos nuevas funciones. ¡Manténganse al tanto para más actualizaciones!
+                    Actualmente estamos trabajando en nuevas secciones y esperamos compartirlas pronto. Gracias por su
+                    paciencia mientras mejoramos nuestro sitio y agregamos nuevas funciones. ¡Manténganse al tanto para
+                    más actualizaciones!
                 </p>
                 <div class="footer">
-                            <button 
-                            pButton 
-                            pRipple 
-                            type="button"
-                            label="Regresar" 
-                            icon="bi bi-arrow-left-circle-fill"
-                            class="p-button-info p-button-outlined"
-                            (click)="goBack()"></button>
+                    <button pButton pRipple type="button" label="Regresar" icon="bi bi-arrow-left-circle-fill"
+                        class="p-button-info p-button-outlined" (click)="goBack()"></button>
                 </div>
                 <!-- <ng-template pTemplate="footer">
                 </ng-template> -->
             </p-card>
         </div>
+        <div class="col">
+            <app-scroll-bottom 
+                [bottom]="scrollBottonPosition['bottom']"
+                [left]="scrollBottonPosition['left']"></app-scroll-bottom>
+        </div>
     </div>
 </div>
+<ng-template #loading>
+    <p-skeleton height="55vh"></p-skeleton>
+</ng-template>
 <!-- </div> -->
