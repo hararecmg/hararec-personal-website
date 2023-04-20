@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     component: PageUnderDevelopmentComponent,
     data: { title: 'blog' }
+  },
+  {
+    path: ':blog',
+    component: PageUnderDevelopmentComponent,
   }
 ];
 
