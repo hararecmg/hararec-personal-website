@@ -19,7 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('./contact/contact.module').then( m => m.ContactModule )
   },
   {
-    path: 'porfolio',
+    path: 'portfolio',
     loadChildren: () => import('./portfolio/portfolio.module').then( m => m.PortfolioModule )
   },
   { 
