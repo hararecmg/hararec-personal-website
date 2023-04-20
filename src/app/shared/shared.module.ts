@@ -13,6 +13,7 @@ import { PageUnderDevelopmentComponent } from './components/page-under-developme
 import { SocialMediaLinkComponent } from './components/social-media-link/social-media-link.component';
 import { CanvasMenuComponent } from './components/canvas-menu/canvas-menu.component';
 import { TreeMenuComponent } from './components/tree-menu/tree-menu.component';
+import { ScrollBottomComponent } from './components/scroll-bottom/scroll-bottom.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { TreeMenuComponent } from './components/tree-menu/tree-menu.component';
     SocialMediaLinkComponent,
     CanvasMenuComponent,
     TreeMenuComponent,
+    ScrollBottomComponent,
   ],
   imports: [
     CommonModule,
@@ -42,6 +44,7 @@ import { TreeMenuComponent } from './components/tree-menu/tree-menu.component';
     FlyingTextComponent,
     PageUnderDevelopmentComponent,
     TreeMenuComponent,
+    ScrollBottomComponent
   ]
 })
 export class SharedModule { }
