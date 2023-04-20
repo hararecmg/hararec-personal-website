@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ScrollBottomComponent implements OnInit {
 
-  @Input() bottom: number = 15;
+  @Input() bottom: string = '15%';
   @Input() left: string = '50%';
   @Input() sizes: number = 5;
   // @Input() fontSize: number = 2.5;
@@ -23,7 +23,7 @@ export class ScrollBottomComponent implements OnInit {
 
   getCssValues(): {[key: string]: string} {
     return {
-      'bottom': `${this.bottom}%`,
+      'bottom': this.bottom,
       'left': this.left,
       'sizes': `${this.sizes}px`,
       'font-size': this.userDevice.isHandset
