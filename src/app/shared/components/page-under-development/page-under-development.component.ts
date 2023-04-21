@@ -36,7 +36,6 @@ export class PageUnderDevelopmentComponent implements OnInit, OnDestroy {
     })
       .pipe(take(1))
       .subscribe(resp => {
-        console.log(resp);
         this.isLoading = false;
         this.pexelsImages = resp;
       });
@@ -68,8 +67,10 @@ export class PageUnderDevelopmentComponent implements OnInit, OnDestroy {
   }
 
   get queryText(): string {
-    const url = this.currentPath || this.router.url;
-    return url.split('/').slice(2).join(' ');
+    const urlArray = (this.currentPath || this.router.url).split('/');
+    return urlArray
+      .filter((valor, indice) => urlArray.indexOf(valor) === indice)
+      .slice(1).join(' ');
   }
 
   get imageAttributes(): { [key: string]: string } {

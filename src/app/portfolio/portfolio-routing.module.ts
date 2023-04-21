@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     component: PageUnderDevelopmentComponent,
     data: { title: 'portfolio' }
+  },
+  {
+    path: ':job/:skill',
+    component: PageUnderDevelopmentComponent,
   }
 ];
 

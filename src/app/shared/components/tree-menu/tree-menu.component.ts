@@ -86,29 +86,31 @@ export class TreeMenuComponent implements OnInit, AfterViewInit, AfterViewChecke
         collapsedIcon: 'bi bi-chevron-down',
         children: [
           {
+            label: 'Desarrollador Móvil',
+            data: ['portfolio', 'developer', 'mobile'],
+            icon: 'bi bi-phone',
+          },
+          {
             label: 'Desarrollador Frontend',
-            data: ['portfolio', 'frontend'],
+            data: ['portfolio', 'developer', 'frontend'],
             icon: 'bi bi-window-fullscreen',
           },
           {
             label: 'Desarrollador Backend',
-            data: ['portfolio', 'backend'],
+            data: ['portfolio', 'developer', 'backend'],
             icon: 'bi bi-pc',
-          },
-          {
-            label: 'Desarrollador Móvil',
-            data: ['portfolio', 'mobile'],
-            icon: 'bi bi-phone',
           },
         ]
       },
       {
         label: 'Blog',
         icon: 'bi bi-journal-bookmark-fill',
+        data: ['blog', 'blog'],
       },
       {
         label: 'Contacto',
-        icon: 'bi bi-envelope'
+        icon: 'bi bi-envelope',
+        data: ['contact', 'contact'],
       }
     ];
   }

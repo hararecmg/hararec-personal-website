@@ -81,29 +81,31 @@ export class TopMenuComponent implements OnInit, AfterViewInit {
         icon: 'bi bi-pc-display-horizontal',
         items: [
           {
+            label: 'Desarrollador Móvil',
+            icon: 'bi bi-phone',
+            command: () => this.findRoute('portfolio', 'developer', 'mobile')
+          },
+          {
             label: 'Desarrollador Frontend',
             icon: 'bi bi-window-fullscreen',
-            command: () => this.findRoute('portfolio', 'frontend')
+            command: () => this.findRoute('portfolio', 'developer', 'frontend')
           },
           {
             label: 'Desarrollador Backend',
             icon: 'bi bi-pc-display',
-            command: () => this.findRoute('portfolio', 'backend')
-          },
-          {
-            label: 'Desarrollador Móvil',
-            icon: 'bi bi-phone',
-            command: () => this.findRoute('portfolio', 'mobile')
+            command: () => this.findRoute('portfolio', 'developer', 'backend')
           },
         ]
       },
       {
         label: 'Blog',
         icon: 'bi bi-journal-bookmark-fill',
+        command: () => this.findRoute('blog', 'blog')
       },
       {
         label: 'Contacto',
-        icon: 'bi bi-envelope'
+        icon: 'bi bi-envelope',
+        command: () => this.findRoute('contact', 'contact')
       }
     ];
     this.theme.themeObserver.subscribe(theme => {
@@ -131,7 +133,6 @@ export class TopMenuComponent implements OnInit, AfterViewInit {
   findRoute(base: string, ...params: string[]) {
 
     this.router.navigate([`/${base}`, ...params])
-      .then(() => console.log(this.router.url.split(/\\|\//)[1]))
       .catch(() => this.router.navigate(['/']));
   }
 
