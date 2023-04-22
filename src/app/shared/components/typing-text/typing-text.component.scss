@@ -1,0 +1,40 @@
+.container {
+    background-color: var(--teal);
+    position: relative;
+    /* font-size: 6vw; */
+    /* font-weight: bold; */
+    padding-left: 6vw;
+    overflow: hidden;
+}
+
+.container .box {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    background-color: var(--yellow-orange);
+    height: 1vw;
+    z-index: 1;
+    /* width: 100px; */
+}
+
+.text, .cursor {
+    font-size: 6vw;
+    font-weight: bold;
+    font-family: var(--text-font);
+}
+
+.hi {
+    font-size: 3vw;
+    font-weight: 400;
+    font-family: var(--text-font-italic);
+    margin-bottom: 1vw;
+}
+
+.text, .hi, .cursor {
+    display: inline-block;
+    color: var(--snow);
+}
+
+.container .cursor, .container .text, .container .hi {
+    display: inline-block;
+}
