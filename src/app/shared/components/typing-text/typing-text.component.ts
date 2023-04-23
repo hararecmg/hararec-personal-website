@@ -78,9 +78,9 @@ export class TypingTextComponent implements OnInit, AfterViewInit {
       ease: 'power3.inOut',
     });
     wordTl.to('.text', {
-      duration: 2,
+      duration: 2.5,
       text: this.openAiResponse['text'].replace(/\/(.*)\//g, ''),
-      delay: 1.5,
+      delay: 1,
       onComplete: function () { tl.play() },
     });
     masterTl.add(wordTl);
