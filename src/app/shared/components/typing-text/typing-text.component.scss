@@ -1,8 +1,6 @@
 .container {
-    background-color: var(--teal);
+    background-image: linear-gradient(var(--teal), var(--magenta));
     position: relative;
-    /* font-size: 6vw; */
-    /* font-weight: bold; */
     padding-left: 6vw;
     overflow: hidden;
 }
@@ -11,20 +9,17 @@
     position: absolute;
     bottom: 0;
     display: inline-block;
-    background-color: var(--yellow-orange);
+    background-color: var(--dark-blue);
     height: 1vw;
     z-index: 1;
-    /* width: 100px; */
 }
 
 .text, .cursor {
-    font-size: 6vw;
     font-weight: bold;
     font-family: var(--text-font);
 }
 
 .hi {
-    font-size: 3vw;
     font-weight: 400;
     font-family: var(--text-font-italic);
     margin-bottom: 1vw;
