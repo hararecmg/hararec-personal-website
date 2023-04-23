@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageUnderDevelopmentComponent } from '../shared/components/page-under-development/page-under-development.component';
+import { PortfolioComponent } from './portfolio.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: PageUnderDevelopmentComponent,
-    data: { title: 'portfolio' }
+    component: PortfolioComponent,
+    data: { title: 'portfolio' },
+    children: [
+      {
+        path: ':job/:skill',
+        component: PageUnderDevelopmentComponent,
+      }
+    ]
   },
-  {
-    path: ':job/:skill',
-    component: PageUnderDevelopmentComponent,
-  }
 ];
 
 @NgModule({
