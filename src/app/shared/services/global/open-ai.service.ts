@@ -50,14 +50,14 @@ export class OpenAiService {
       }
     })
 
-    return localStorage.getItem(localData)
-      ? of<OpenAIResponse>(JSON.parse(localStorage.getItem(localData) || ''))
+    return sessionStorage.getItem(localData)
+      ? of<OpenAIResponse>(JSON.parse(sessionStorage.getItem(localData) || ''))
       : this.http.post<OpenAIResponse>(
         `${environment.openAiBaseUrl}/v1/completions`,
         JSON.stringify(body)
       ).pipe(
         map(this.mapOpenAIResponse),
-        tap(resp => localStorage.setItem(localData, JSON.stringify(resp)))
+        tap(resp => sessionStorage.setItem(localData, JSON.stringify(resp)))
       );
   }
 
