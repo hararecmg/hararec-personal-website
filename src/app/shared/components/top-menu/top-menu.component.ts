@@ -8,6 +8,7 @@ import { DeviceService } from 'src/app/shared/services/global/device.service';
 import { Device } from '../../interfaces/device';
 import { ThemeService } from '../../services/global/theme.service';
 import { TypingTextComponent } from '../typing-text/typing-text.component';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-top-menu',
@@ -157,7 +158,7 @@ export class TopMenuComponent implements OnInit, AfterViewInit {
           baseZIndex: 10000,
           resizable: false,
         });
-        timer(14000).pipe(
+        timer(Number(environment.modalIsDysplayed) * 1000).pipe(
           take(1)
         ).subscribe(() => ref.close());
 

@@ -6,6 +6,7 @@ import { TreeNode } from 'primeng/api';
 import { NodeEvent } from '../../interfaces/node-event';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { TypingTextComponent } from '../typing-text/typing-text.component';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-tree-menu',
@@ -166,7 +167,7 @@ export class TreeMenuComponent implements OnInit, AfterViewInit, AfterViewChecke
             baseZIndex: 10000,
             resizable: false,
           });
-          timer(14000).pipe(
+          timer(Number(environment.modalIsDysplayed) * 1000).pipe(
             take(1)
           ).subscribe(() => ref.close());
         })
