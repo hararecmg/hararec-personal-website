@@ -1,6 +1,6 @@
 [Documentación en español](#espanol) | [Documentation in English](#english)
 
-# <div id="espanol">💻 Sitio web personal v0.3.0 - HararecMG</div>
+# <div id="espanol">💻 Sitio web personal v1.0.0 - HararecMG</div>
 
 ## <div id="indice">📋 Índice</div>
 
@@ -15,7 +15,7 @@
 
 ## <div id="acerca-de-mi">🙋‍♂️ Acerca de mí</div>
 
-¡Hola!, mi nombre es Hararec y soy un desarrollador full stack con experiencia en javascript y python, y en tecnologías como React, Angular y Django. También tengo conocimientos en diseño de interfaz de usuario y trabajando en equipo bajo metodologías ágiles. Mi formación en matemáticas me brinda una visión analítica y lógica para abordar problemas técnicos. Además soy un apasionado por el mundo digital, y siempre estoy buscando nuevos desafíos para mejorar mis habilidades y ampliar mi conocimiento. Para mí será un gusto aportar valor a cualquier equipo de trabajo con soluciones innovadoras.
+¡Hola!, mi nombre es Hararec y soy un desarrollador full stack con experiencia en javascript y python, y en tecnologías como React, Angular, Express y Django. También tengo conocimientos en diseño de interfaz de usuario y trabajando en equipo bajo metodologías ágiles. Mi formación en matemáticas me brinda una visión analítica y lógica para abordar problemas técnicos. Además soy un apasionado por el mundo digital, y siempre estoy buscando nuevos desafíos para mejorar mis habilidades y ampliar mi conocimiento. Para mí será un gusto aportar valor a cualquier equipo de trabajo con soluciones innovadoras.
 
 #### <div id="contacto">_📧 Mi contacto y redes sociales:_<div/>
 
@@ -30,7 +30,7 @@
 
 ## <div id="acerca-de-este-repositorio">📂 Acerca de este Repositorio</div>
 
-Este repositorio alberga el código fuente de mi sitio web personal, el cual usa la versión 15.1.0 de Angular, usa las librerías de diseño [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap-icons](https://icons.getbootstrap.com/) y [Normalize.css](https://necolas.github.io/normalize.css/), y sigue el flujo de trabajo de Gitflow. Además, utilizo la notación de [Conventional Commits](https://www.conventionalcommits.org) para mis commits, lo cual me permite mantener un control y una buena documentación del código. Este proyecto también ha sido inspirado en diseños mostrados en el canal de Youtube [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT), por lo que quiero expresar mi más sincero agradecimiento por compartir su conocimiento y por ser una fuente de inspiración para mí. Mi portafolio incluye una selección de proyectos que he realizado a lo largo de mi carrera como desarrollador. Cada uno de ellos refleja mis habilidades y mi pasión por el desarrollo de software de calidad. ¡Si quieres conocer más sobre mi trabajo o colaborar juntos, no dudes en ponerte en contacto conmigo! Estoy seguro de que juntos podemos alcanzar grandes objetivos.
+Este repositorio alberga el código fuente de mi sitio web personal, el cual usa la versión 15.2.5 de Angular, usa las librerías de diseño [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap](https://getbootstrap.com/), [Bootstrap-icons](https://icons.getbootstrap.com/) y [PrimeNg-Icons](https://primeng.org/icons), y sigue el flujo de trabajo de Gitflow. Además, utilizo la notación de [Conventional Commits](https://www.conventionalcommits.org) para mis commits, lo cual me permite mantener un control y una buena documentación del código. Este proyecto también ha sido inspirado en diseños mostrados en el canal de Youtube [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT), por lo que quiero expresar mi más sincero agradecimiento por compartir su conocimiento y por ser una fuente de inspiración para mí. Mi portafolio incluye una selección de proyectos que he realizado a lo largo de mi carrera como desarrollador. Cada uno de ellos refleja mis habilidades y mi pasión por el desarrollo de software de calidad. ¡Si quieres conocer más sobre mi trabajo o colaborar juntos, no dudes en ponerte en contacto conmigo! Estoy seguro de que juntos podemos alcanzar grandes objetivos.
 
 <details>
   <summary>Proyectos incluidos</summary>
@@ -100,7 +100,9 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
 
   Esta aplicación utiliza las dependencias para desarrollo [@ngx-env/builder](https://github.com/chihab/ngx-env/) y [@types/node](https://www.npmjs.com/package/@types/node/) para habilitar el uso de variables de entorno en todo el proyecto. Esto significa que las claves de API y otras configuraciones sensibles se deben almacenar en un archivo `.env` que se encuentra en la raíz del proyecto. Así la aplicación requiere que se configuren las siguientes variables de entorno antes de ejecutarse:
 
-  - `NG_OPENAI_API_KEY`: la clave de API de OpenAI (obtenida de https://openai.com/api/).
+  - `NG_OPENAI_API_KEY`: la clave de API de OpenAI (obtenida de https://platform.openai.com/account/api-keys).
+  - `NG_OPENAI_ORGANIZATION_ID`: el identificador de OpenAI de tu organización (obtenida de https://platform.openai.com/account/org-settings).
+  - `NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED`: la cantidad de segundos que quieres que se muestre la ventana modal de 'frases filosóficas' generadas con la api de OpenAI, antes de que se cierre de forma automática.
   - `NG_PEXEL_API_KEY`: la clave de API de Pexels (obtenida de https://www.pexels.com/api/).
 
   Para configurar estas variables de entorno en diferentes sistemas operativos, siga las instrucciones a continuación:
@@ -178,9 +180,12 @@ Si tienes alguna pregunta o necesitas más información sobre cómo utilizar el 
 
 ## <div id="creditos">🤝 Créditos</div>
 
-Este proyecto utiliza código de los siguientes proyectos con licencia MIT:
+En este repositorio se utiliza código de los siguientes proyectos con licencia MIT:
 
-- **Proyecto A**: Descripción del proyecto A. Licencia MIT. En este proyecto se utiliza una parte del archivo XYZ de John Doe y Jane Smith, el cual está protegido por derechos de autor y se distribuye bajo la licencia MIT. La parte del archivo que se está utilizando es [descripción de la parte del archivo]. Para más información, consulta el archivo de licencia [aquí](licencias/LICENSE-MIT.txt).
+- **[css-cards-effects](https://github.com/rymbau/css-cards-effects)**: Es un proyecto para crear efectos de tarjetas útiles CSS: transiciones, transformaciones y animaciones, el cual está protegido por derechos de autor y se distribuye bajo la licencia MIT. El archivo de este proyecto en el que se está utilizando dicho código de terceros, es el componente ["LogoComponent"](src/app/shared/components/logo/logo.component.ts). Para más información, consulta el archivo de licencia [aquí](licences/css-cards-effects-LICENSE.txt).
+- **[ParallaxScrolling](https://github.com/DavidThomas358/ParallaxScrolling)**: Es un proyecto para aplicar el efecto de desplazamiento de paralaje, el cual está protegido por derechos de autor y se distribuye bajo la licencia MIT. El archivo de este proyecto en el que se está utilizando dicho código de terceros, es el componente ["ScrollingParallaxComponent"](src/app/home/components/scrolling-parallax/scrolling-parallax.component.ts). Para más información, consulta el archivo de licencia [aquí](licences/ParallaxScrolling-LICENSE.txt).
+- **[splash-transition
+](https://github.com/lmgonzalves/splash-transition)**: Es un proyecto para crear una animación llamativa, simplemente usando rutas SVG y transiciones CSS, el cual está protegido por derechos de autor y se distribuye bajo la licencia MIT. El archivo de este proyecto en el que se está utilizando dicho código de terceros, es el componente ["WelcomeComponent"](src/app/home/components/welcome/welcome.component.ts). Para más información, consulta el archivo de licencia [aquí](licences/splash-transition-LICENSE.txt).
 
 <hr/>
 
@@ -193,7 +198,7 @@ Espero que hayas disfrutado explorando mis proyectos y que hayas encontrado algo
 <hr/>
 
 
-# <div id="english">💻 Personal website v0.3.0 - HararecMG</div>
+# <div id="english">💻 Personal website v1.0.0 - HararecMG</div>
 
 ## <div id="index">📋 Index</div>
 
@@ -208,7 +213,7 @@ Espero que hayas disfrutado explorando mis proyectos y que hayas encontrado algo
 
 ## <div id="about-me">🙋‍♂️ About Me</div>
 
-Hi! I'm Hararec, a full-stack dev with experience in Javascript and Python, as well as techs like React, Angular, and Django. I've got a background in UI design and teamwork using agile methodologies, and my mathematical background provides me with an analytical and logical approach to solving tech problems. I'm passionate about the digital world and always looking for new challenges to enhance my skills and knowledge. I'd be thrilled to bring innovative solutions to any work team.
+Hi! I'm Hararec, a full-stack dev with experience in Javascript and Python, as well as techs like React, Angular, Express and Django. I've got a background in UI design and teamwork using agile methodologies, and my mathematical background provides me with an analytical and logical approach to solving tech problems. I'm passionate about the digital world and always looking for new challenges to enhance my skills and knowledge. I'd be thrilled to bring innovative solutions to any work team.
 
 #### <div id="contact">_📧 My contact and social media:_<div/>
 
@@ -222,7 +227,7 @@ Hi! I'm Hararec, a full-stack dev with experience in Javascript and Python, as w
 
 ## <div id="about-this-repository">📂 About This Repository</div>
 
-This repo holds the source code for my personal website, using Angular v15.1.0 and the design libs [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap-icons](https://icons.getbootstrap.com/), and [Normalize.css](https://necolas.github.io/normalize.css/). It follows the Gitflow workflow and I use [Conventional Commits](https://www.conventionalcommits.org) notation for my commits, ensuring proper code control and documentation. The project's also inspired by designs shown on the [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT) Youtube channel, and I'm grateful for their sharing of knowledge and being an inspiration. My portfolio showcases selected projects I've completed throughout my dev career, each reflecting my skills and passion for delivering quality software. If you want to learn more about my work or collaborate, don't hesitate to reach out! I'm confident we can achieve great things together.
+This repo holds the source code for my personal website, using Angular v15.2.5 and the design libs [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap](https://getbootstrap.com/), [Bootstrap-icons](https://icons.getbootstrap.com/), and [PrimeNg-Icons](https://primeng.org/icons). It follows the Gitflow workflow and I use [Conventional Commits](https://www.conventionalcommits.org) notation for my commits, ensuring proper code control and documentation. The project's also inspired by designs shown on the [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT) Youtube channel, and I'm grateful for their sharing of knowledge and being an inspiration. My portfolio showcases selected projects I've completed throughout my dev career, each reflecting my skills and passion for delivering quality software. If you want to learn more about my work or collaborate, don't hesitate to reach out! I'm confident we can achieve great things together.
 
 <details>
   <summary>Included Projects</summary>
@@ -296,6 +301,8 @@ Below are the instructions for cloning and/or downloading and running the projec
   This application uses development dependencies [@ngx-env/builder](https://github.com/chihab/ngx-env/) and [@types/node](https://www.npmjs.com/package/@types/node/) to enable the use of environment variables throughout the project. This means that API keys and other sensitive configurations should be stored in a `.env` file located at the root of the project. Therefore, the application requires the following environment variables to be configured before running:
 
   - `NG_OPENAI_API_KEY`: OpenAI API key (obtained from https://openai.com/api/).
+  - `NG_OPENAI_ORGANIZATION_ID`: - Your organization's OpenAI identifier (obtained from https://platform.openai.com/account/org-settings).
+ - `NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED`: the number of seconds you want the 'philosophical phrases' modal window generated with the OpenAI api to display, before it closes automatically.
   - `NG_PEXEL_API_KEY`: Pexels API key (obtained from https://www.pexels.com/api/).
 
   To configure these environment variables on different operating systems, follow the instructions below:
@@ -374,7 +381,11 @@ If you have any questions or need more information about how to use the code inc
 
 This project uses code from the following MIT licensed projects:
 
-- **Project A**: Description of project A. MIT License. This project uses a portion of the John Doe and Jane Smith XYZ file, which is copyrighted and distributed under the MIT license. The part of the file that is being used is [description of the part of the file]. For more information, see the license file [here](licencias/LICENSE-MIT.txt).
+- **[css-cards-effects](https://github.com/rymbau/css-cards-effects)**: It's a project to create useful CSS card effects such as transitions, transformations, and animations, which is protected by copyright and distributed under the MIT license. The file in this project that uses third-party code is the ["LogoComponent"](src/app/shared/components/logo/logo.component.ts) component. For more information, see the license file [here](licences/css-cards-effects-LICENSE.txt).
+
+- **[ParallaxScrolling](https://github.com/DavidThomas358/ParallaxScrolling)**: It's a project to apply the parallax scrolling effect, which is protected by copyright and distributed under the MIT license. The file in this project that uses third-party code is the ["ScrollingParallaxComponent"](src/app/home/components/scrolling-parallax/scrolling-parallax.component.ts) component. For more information, see the license file [here](licences/ParallaxScrolling-LICENSE.txt).
+
+- **[splash-transition](https://github.com/lmgonzalves/splash-transition)**: It's a project to create an eye-catching animation simply using SVG paths and CSS transitions, which is protected by copyright and distributed under the MIT license. The file in this project that uses third-party code is the ["WelcomeComponent"](src/app/home/components/welcome/welcome.component.ts) component. For more information, see the license file [here](licences/splash-transition-LICENSE.txt).
 
 <hr/>
 
