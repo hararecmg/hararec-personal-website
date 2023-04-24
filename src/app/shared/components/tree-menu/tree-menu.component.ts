@@ -161,15 +161,22 @@ export class TreeMenuComponent implements OnInit, AfterViewInit, AfterViewChecke
       this.router.navigate([`/${base}`, ...params])
         .then(() => {
           this.onSelecting.emit(false);
+
+          if (base === 'home') {
+            return;
+          }
+
           const ref: DynamicDialogRef = this.dialogService.open(TypingTextComponent, {
             header: '¡Inspírate con esta frase filosófica!, esperamos que te guste 🤗',
             draggable: false,
             baseZIndex: 10000,
             resizable: false,
           });
+
           timer(Number(environment.modalIsDysplayed) * 1000).pipe(
             take(1)
           ).subscribe(() => ref.close());
+          
         })
         .catch(() => {
           this.onSelecting.emit(true);
