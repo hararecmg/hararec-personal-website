@@ -30,6 +30,7 @@ export class ApiInterceptorService implements HttpInterceptor {
     if (req.url.includes(environment.openAiBaseUrl)) {
       headers = headers
       .set('Authorization', `Bearer ${environment.openAiApiKey}`)
+      .set('OpenAI-Organization', `${environment.openAiOrganizationId}`)
       .set('Content-Type', 'application/json');
     }
     

@@ -1,0 +1,35 @@
+.container {
+    background-image: linear-gradient(var(--teal), var(--magenta));
+    position: relative;
+    padding-left: 6vw;
+    overflow: hidden;
+}
+
+.container .box {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    background-color: var(--dark-blue);
+    height: 1vw;
+    z-index: 1;
+}
+
+.text, .cursor {
+    font-weight: bold;
+    font-family: var(--text-font);
+}
+
+.hi {
+    font-weight: 400;
+    font-family: var(--text-font-italic);
+    margin-bottom: 1vw;
+}
+
+.text, .hi, .cursor {
+    display: inline-block;
+    color: var(--snow);
+}
+
+.container .cursor, .container .text, .container .hi {
+    display: inline-block;
+}

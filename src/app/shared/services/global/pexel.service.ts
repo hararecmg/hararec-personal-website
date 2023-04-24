@@ -25,14 +25,14 @@ export class PexelService {
       }
     })
 
-    return localStorage.getItem(localData)
-      ? of<PexelResponse>(JSON.parse(localStorage.getItem(localData) || ''))
+    return sessionStorage.getItem(localData)
+      ? of<PexelResponse>(JSON.parse(sessionStorage.getItem(localData) || ''))
       : this.http.get<PexelResponse>(
         `${environment.pexelBaseUrl}/v1/${end_point}/`,
         { params }
       ).pipe(
         map(this.mapPexelResponse),
-        tap(resp => localStorage.setItem(localData, JSON.stringify(resp)))
+        tap(resp => sessionStorage.setItem(localData, JSON.stringify(resp)))
       );
   }
 

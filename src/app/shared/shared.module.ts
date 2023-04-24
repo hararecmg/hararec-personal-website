@@ -14,6 +14,7 @@ import { SocialMediaLinkComponent } from './components/social-media-link/social-
 import { CanvasMenuComponent } from './components/canvas-menu/canvas-menu.component';
 import { TreeMenuComponent } from './components/tree-menu/tree-menu.component';
 import { ScrollBottomComponent } from './components/scroll-bottom/scroll-bottom.component';
+import { TypingTextComponent } from './components/typing-text/typing-text.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ScrollBottomComponent } from './components/scroll-bottom/scroll-bottom.
     CanvasMenuComponent,
     TreeMenuComponent,
     ScrollBottomComponent,
+    TypingTextComponent,
   ],
   imports: [
     CommonModule,
