@@ -7,9 +7,9 @@ Location: CDMX, México
 
 /* WEBSITE */
 
-Programmed in Angular v15.2.1
+Programmed in Angular v15.2.5
 Components library: PrimeNg
-Icons library: Bootstrap-icons
+Icons library: Bootstrap-icons, PrimeNg-icons
 
 /* RESOURCES */
 
