@@ -1,0 +1,29 @@
+.p-timeline .p-timeline-event-marker {
+    border: 2px solid #C4B5FD;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    background-color: #1c2127;
+}
+
+.p-timeline .p-timeline-event-connector {
+    background-color: #0b213f;
+}
+
+.p-timeline.p-timeline-vertical .p-timeline-event-opposite,
+.p-timeline.p-timeline-vertical .p-timeline-event-content {
+    padding: 0 1rem;
+}
+
+.p-timeline.p-timeline-vertical .p-timeline-event-connector {
+    width: 2px;
+}
+
+.p-timeline.p-timeline-horizontal .p-timeline-event-opposite,
+.p-timeline.p-timeline-horizontal .p-timeline-event-content {
+    padding: 1rem 0;
+}
+
+.p-timeline.p-timeline-horizontal .p-timeline-event-connector {
+    height: 2px;
+}

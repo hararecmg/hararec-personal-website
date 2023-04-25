@@ -1,0 +1,49 @@
+.p-togglebutton.p-button {
+    background: #071426;
+    border: 1px solid #0b213f;
+    color: rgba(255, 255, 255, 0.87);
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.p-togglebutton.p-button .p-button-icon-left,
+.p-togglebutton.p-button .p-button-icon-right {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.p-togglebutton.p-button:not(.p-disabled):hover {
+    background: var(--magenta);
+    border-color: #0b213f;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.p-togglebutton.p-button:not(.p-disabled):hover .p-button-icon-left,
+.p-togglebutton.p-button:not(.p-disabled):hover .p-button-icon-right {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+// .p-togglebutton.p-button.p-highlight {
+//     background: rgba(255, 255, 255, 0.6);
+//     border-color: #C4B5FD;
+//     color: #1c2127;
+// }
+
+// .p-togglebutton.p-button.p-highlight .p-button-icon-left,
+// .p-togglebutton.p-button.p-highlight .p-button-icon-right {
+//     color: #1c2127;
+// }
+
+// .p-togglebutton.p-button.p-highlight:hover {
+//     background: #b3a0fc;
+//     border-color: #b3a0fc;
+//     color: #1c2127;
+// }
+
+// .p-togglebutton.p-button.p-highlight:hover .p-button-icon-left,
+// .p-togglebutton.p-button.p-highlight:hover .p-button-icon-right {
+//     color: #1c2127;
+// }
+
+p-togglebutton.ng-dirty.ng-invalid>.p-togglebutton.p-button {
+    border-color: #FCA5A5;
+}

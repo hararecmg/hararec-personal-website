@@ -12,11 +12,13 @@ export class DeviceService {
   private isHandset$: Observable<boolean>;
   private isTablet$: Observable<boolean>;
   private isWeb$: Observable<boolean>;
+  private isXLarge$: Observable<boolean>;
   private renderer: Renderer2;
   private _device: Device = {
     isHandset: false,
     isTablet: false,
-    isWeb: false
+    isWeb: false,
+    isXLarge: false,
   }
   private deviceSubject = new BehaviorSubject<Device>(this._device);
   device$ = this.deviceSubject.asObservable();
@@ -42,6 +44,11 @@ export class DeviceService {
         map(result => result.matches),
         shareReplay()
       );
+    this.isXLarge$ = this.breakpointObserver.observe(Breakpoints.XLarge)
+      .pipe(
+        map(result => result.matches),
+        shareReplay()
+      );
     this.detectDeviceType();
   }
 
@@ -57,6 +64,10 @@ export class DeviceService {
     this.isWeb$.subscribe(event => {
       this.renderer.setAttribute(this.document.documentElement, 'data-device', 'web');
       this.device = {...this.device, isWeb: event };
+    });
+    this.isXLarge$.subscribe(event => {
+      this.renderer.setAttribute(this.document.documentElement, 'data-device', 'xlarge');
+      this.device = {...this.device, isXLarge: event };
     });
   }
 

@@ -1,0 +1,13 @@
+<div class="pulse"
+    [ngStyle]="{
+        'bottom' : cssValues['bottom'],
+        'left' : cssValues['left'],
+        'width' : cssValues['sizes'],
+        'height' : cssValues['sizes'],
+        'font-size' : cssValues['font-size'],
+        'animation-delay': userDevice.isXLarge
+            ? '0s'
+            : '5s'
+    }"><i 
+        [ngStyle]="{'color': cssValues['color']}" 
+        class="bi bi-arrow-down-circle-fill"></i></div>

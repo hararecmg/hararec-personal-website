@@ -1,1 +1,42 @@
-<p-megaMenu [model]="items"></p-megaMenu>
+<div [ngClass]="{'scrolled': isScrolled }">
+    <p-menubar [model]="menuItems">
+        <ng-template pTemplate="start">
+            <a [routerLink]="['/home']">
+                <app-logo [scale]="0.15"></app-logo>
+            </a>
+        </ng-template>
+        <ng-template pTemplate="end">
+            <div class="menu-items-end">
+                <div *ngIf="!userDevice.isHandset">
+                    <app-social-media-link></app-social-media-link>
+                </div>
+                <div class="me-2">
+                    <app-theme-button></app-theme-button>
+                </div>
+                <div class="me-2" *ngIf="userDevice.isHandset || userDevice.isTablet">
+                    <app-canvas-menu></app-canvas-menu>
+                </div>
+            </div>
+        </ng-template>
+    </p-menubar>
+</div>
+<!-- [ngStyle]="{'position': 'fixed', 'bottom': '0px', 'width': '100%'}" -->
+<!-- <div style="background-color: black;">
+    <p-rating [(ngModel)]="val" iconOnClass="bi bi-star-fill" iconOffClass="bi bi-star">
+    </p-rating>
+</div>
+<p-tree [value]="files" selectionMode="single" (onNodeSelect)="selec($event)"></p-tree>
+<p-button (click)="showMaximizableDialog()" icon="pi pi-external-link" label="Show"></p-button>
+<p-dialog header="Godfather I" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '50vw'}"
+    [maximizable]="true" [draggable]="false" [resizable]="false">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <ng-template pTemplate="footer">
+            <p-button icon="bi bi-check" (click)="displayMaximizable=false" label="Ok"
+            styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog> -->

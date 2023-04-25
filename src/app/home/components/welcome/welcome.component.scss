@@ -1,0 +1,101 @@
+.state {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('../../../../assets/icons/stars.gif');
+    // background-color: var(--primary-color);
+    // background-image: linear-gradient(var(--vermilion), var(--turquoise));
+    // background-repeat: no-repeat;
+}
+
+.svg {
+    position: fixed;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.svg-center {
+    border-radius: 100%;
+}
+
+path {
+    fill: none;
+    stroke: var(--navy-blue);
+    stroke-width: 150px;
+}
+
+path.path-center {
+    stroke-width: 200px;
+}
+
+.svg-borders,
+.path-center,
+.path-borders {
+    transition: 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.open-state .svg-borders {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.open-state .path-center {
+    stroke-width: 0;
+}
+
+.path-borders:nth-child(6) {
+    stroke-dashoffset: 10000;
+    stroke-dasharray: 10000 0 5827.5;
+}
+
+.open-state .path-borders:nth-child(6) {
+    stroke-dasharray: 10000 0 0;
+}
+
+.path-borders:nth-child(5) {
+    stroke-dashoffset: 10000;
+    stroke-dasharray: 10000 0 4882.5;
+}
+
+.open-state .path-borders:nth-child(5) {
+    stroke-dasharray: 10000 4882.5 4882.5;
+}
+
+.path-borders:nth-child(4) {
+    stroke-dashoffset: 10000;
+    stroke-dasharray: 10000 0 3937.5;
+}
+
+.open-state .path-borders:nth-child(4) {
+    stroke-dasharray: 10000 0 0;
+}
+
+.path-borders:nth-child(3) {
+    stroke-dashoffset: 10000;
+    stroke-dasharray: 10000 0 2992.5;
+}
+
+.open-state .path-borders:nth-child(3) {
+    stroke-dasharray: 10000 2992.5 2992.5;
+}
+
+.path-borders:nth-child(2) {
+    stroke-dashoffset: 10000;
+    stroke-dasharray: 10000 0 2047.5;
+}
+
+.open-state .path-borders:nth-child(2) {
+    stroke-dasharray: 10000 0 0;
+}
+
+.path-borders:nth-child(1) {
+    stroke-dashoffset: 10000;
+    stroke-dasharray: 10000 0 1102.5;
+}
+
+.open-state .path-borders:nth-child(1) {
+    stroke-dasharray: 10000 1102.5 1102.5;
+}

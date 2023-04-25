@@ -1,0 +1,21 @@
+<div class="text"
+    [ngStyle]="{
+        'width': width,
+        'min-height': minHeight,
+        'background': background,
+        'font-size': fontSize,
+        'top': top,
+        'left': left,
+        'text-align': textAlign,
+        'padding-left': padding,
+        'padding-right': padding
+    }">
+    <ng-container *ngFor="let char of textArray">
+        <span 
+            class="word" 
+            style="position: relative; display: inline-block;"
+        >{{ char }}</span>
+        <span class="word" 
+            style="color: transparent; position: relative; display: inline-block;">+</span>
+    </ng-container>
+</div>

@@ -1,0 +1,30 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image {
+    position: relative;
+    min-height: 55vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    color: #fff;
+
+    .pexels {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        font-family: var(--text-font-italic);
+        font-size: small;
+    }
+
+}

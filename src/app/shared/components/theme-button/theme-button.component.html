@@ -1,0 +1,12 @@
+<div class="card flex justify-content-center">
+    <form [formGroup]="themeForm">
+        <p-toggleButton 
+            formControlName="checked"
+            [onIcon]="'bi bi-sun-fill'"
+            [offIcon]="'bi bi-moon-stars-fill'"
+            [pTooltip]="themeName" 
+            tooltipPosition="bottom"
+            (click)="changeTheme()"
+            [ngClass]="customClass"></p-toggleButton>
+    </form>
+</div>

@@ -1,0 +1,74 @@
+.p-rating-icon {
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.p-rating.p-rating-readonly .p-rating-icon {
+    cursor: default;
+}
+
+.p-rating .p-rating-icon {
+    color: rgba(255, 255, 255, 0.87);
+    margin-left: 0.5rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    font-size: 1.143rem;
+}
+
+.p-rating .p-rating-icon.p-rating-cancel {
+    color: #F48FB1;
+}
+
+.p-rating .p-rating-icon:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem rgba(196, 181, 253, 0.5);
+}
+
+.p-rating .p-rating-icon:first-child {
+    margin-left: 0;
+}
+
+.p-rating .p-rating-icon.pi-star-fill {
+    color: #C4B5FD;
+}
+
+.p-rating:not(.p-disabled):not(.p-readonly) .p-rating-icon:hover {
+    color: #C4B5FD;
+}
+
+.p-rating:not(.p-disabled):not(.p-readonly) .p-rating-icon.p-rating-cancel:hover {
+    color: #F48FB1;
+}
+
+.p-rating .p-rating-icon {
+    color: rgba(255, 255, 255, 0.87);
+    margin-left: 0.5rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    font-size: 1.143rem;
+}
+
+.p-rating .p-rating-icon.p-rating-cancel {
+    color: #F48FB1;
+}
+
+.p-rating .p-rating-icon:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem rgba(196, 181, 253, 0.5);
+}
+
+.p-rating .p-rating-icon:first-child {
+    margin-left: 0;
+}
+
+.p-rating .p-rating-icon.pi-star-fill {
+    color: #C4B5FD;
+}
+
+.p-rating:not(.p-disabled):not(.p-readonly) .p-rating-icon:hover {
+    color: #C4B5FD;
+}
+
+.p-rating:not(.p-disabled):not(.p-readonly) .p-rating-icon.p-rating-cancel:hover {
+    color: #F48FB1;
+}
