@@ -38,5 +38,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: dist/practice-version-15.2.4
+          publish_dir: dist/hararec-portfolio
           enable_jekyll: true
