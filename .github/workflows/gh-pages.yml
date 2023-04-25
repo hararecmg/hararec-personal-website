@@ -1,0 +1,42 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Set environment variables
+        run: |
+          echo "NG_OPENAI_ORGANIZATION_ID=${{ secrets.NG_OPENAI_ORGANIZATION_ID }}" >> $GITHUB_ENV
+          echo "NG_OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+          echo "NG_PEXEL_API_KEY=${{ secrets.PEXELS_API_KEY }}" >> $GITHUB_ENV
+          echo "NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED=${{ secrets.NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED }}" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: npm install
+
+      # - name: Run tests
+      #   run: npm run test:headless
+
+      - name: Build
+        run: npm run build:prod
+
+      - name: Deploy
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: dist/practice-version-15.2.4
+          enable_jekyll: true
