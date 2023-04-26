@@ -4,12 +4,7 @@
     (touchstart)="isHoverLogo(true)"
     (touchend)="isHoverLogo()"
     [ngStyle]="logoStyles">
-    <img 
-        class="back" 
-        src="../../../../assets/icons/rabbit.png" 
-        alt="Rabbit Image"
-        [ngStyle]="{'--translationPx': translationPx }" />
-    <img 
-        src="../../../../assets/icons/hat.png" 
-        alt="Hat Image" />
+    <div class="back"
+        [ngStyle]="{'--translationPx': translationPx }"></div>
+    <div class="hat"></div>
 </div>
