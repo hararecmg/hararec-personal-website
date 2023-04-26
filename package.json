@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:prod": "ng build --configuration production --aot --build-optimizer --optimization --base-href https://hararecmg.github.io/hararec-website",
+    "build:prod": "ng build --configuration production --base-href https://hararecmg.github.io/hararec-website/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
