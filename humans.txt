@@ -1,0 +1,28 @@
+/* hararecmg - https://hararecmg.github.io/hararec-website/ */
+
+/* TEAM */
+
+Developer and Designer: Hararec M.G
+Location: CDMX, México
+
+/* WEBSITE */
+
+Programmed in Angular v15.2.4
+Components library: PrimeNg
+Icons library: Bootstrap-icons, PrimeNg-icons
+
+/* RESOURCES */
+
+- Fonts: Google Fonts
+
+/* INSPIRATION */
+
+- Design: https://www.youtube.com/@OnlineTutorialsYT
+- https://jonmircha.com/
+- https://davidhellmann.com/
+- https://www.adhamdannaway.com/
+
+/* CONTACT */
+
+Email: matematicamatematica1729@gmail.com
+Twitter: @HararecMG
