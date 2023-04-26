@@ -74,16 +74,16 @@ export class WelcomeComponent implements OnInit {
             ? '7.5rem'
             : '3.5rem',
       'width-photo': this.userDevice.isHandset
-      ? '100vw'
+      ? '90vw'
       : this.userDevice.isTablet
         ? '75vw'
         : this.userDevice.isWeb || this.userDevice.isXLarge
           ? '40vw'
           : '100vw', 
       'min-height-photo': this.userDevice.isHandset
-      ? '60vh'
+      ? '40vh'
       : this.userDevice.isTablet
-        ? '40vh'
+        ? '60vh'
         : this.userDevice.isWeb || this.userDevice.isXLarge
           ? 'calc(100vh - 100px)'
           : '40vh', 
