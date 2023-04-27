@@ -16,7 +16,7 @@ import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
 // Overlay
 import { DialogModule } from 'primeng/dialog';
-import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { SidebarModule } from 'primeng/sidebar';
 import { TooltipModule } from 'primeng/tooltip';
 // Menu
@@ -66,5 +66,8 @@ import { AnimateModule } from 'primeng/animate';
     SkeletonModule,
     AnimateModule,
   ],
+  providers: [
+    DialogService,
+  ]
 })
 export class PrimengModule { }
