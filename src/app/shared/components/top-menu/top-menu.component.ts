@@ -1,20 +1,15 @@
 import { Component, OnInit, HostListener, Renderer2, RendererFactory2, Inject, AfterViewInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
-import { take, timer } from 'rxjs';
 import { MenuItem } from 'primeng/api';
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { DeviceService } from 'src/app/shared/services/global/device.service';
 import { Device } from '../../interfaces/device';
 import { ThemeService } from '../../services/global/theme.service';
-import { TypingTextComponent } from '../typing-text/typing-text.component';
-import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-top-menu',
   templateUrl: './top-menu.component.html',
   styleUrls: ['./top-menu.component.scss'],
-  providers: [DialogService]
 })
 export class TopMenuComponent implements OnInit, AfterViewInit {
 
@@ -35,7 +30,6 @@ export class TopMenuComponent implements OnInit, AfterViewInit {
     private router: Router,
     private rendererFactory: RendererFactory2,
     private theme: ThemeService,
-    private dialogService: DialogService,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
@@ -151,18 +145,6 @@ export class TopMenuComponent implements OnInit, AfterViewInit {
   findRoute(base: string, ...params: string[]) {
 
     this.router.navigate([`/${base}`, ...params])
-      .then(() => {
-        const ref: DynamicDialogRef = this.dialogService.open(TypingTextComponent, {
-          header: '¡Inspírate con esta frase filosófica!, esperamos que te guste 🤗',
-          draggable: false,
-          baseZIndex: 10000,
-          resizable: false,
-        });
-        timer(Number(environment.modalIsDysplayed) * 1000).pipe(
-          take(1)
-        ).subscribe(() => ref.close());
-
-      })
       .catch(() => this.router.navigate(['/']));
   }
 
