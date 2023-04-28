@@ -47,6 +47,9 @@ import { TypingTextComponent } from './components/typing-text/typing-text.compon
     PageUnderDevelopmentComponent,
     TreeMenuComponent,
     ScrollBottomComponent
+  ],
+  entryComponents: [
+    TypingTextComponent,
   ]
 })
 export class SharedModule { }

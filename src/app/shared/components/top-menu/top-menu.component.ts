@@ -1,22 +1,19 @@
-import { Component, OnInit, HostListener, Renderer2, RendererFactory2, Inject, AfterViewInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Component, OnInit, HostListener, Renderer2, RendererFactory2, Inject, AfterViewInit, OnDestroy } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
-import { take, timer } from 'rxjs';
 import { MenuItem } from 'primeng/api';
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { DeviceService } from 'src/app/shared/services/global/device.service';
 import { Device } from '../../interfaces/device';
 import { ThemeService } from '../../services/global/theme.service';
-import { TypingTextComponent } from '../typing-text/typing-text.component';
-import { environment } from 'src/environments/environment.development';
+import { TypingTextModalService } from '../../services/global/typing-text-modal.service';
 
 @Component({
   selector: 'app-top-menu',
   templateUrl: './top-menu.component.html',
   styleUrls: ['./top-menu.component.scss'],
-  providers: [DialogService]
 })
-export class TopMenuComponent implements OnInit, AfterViewInit {
+export class TopMenuComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private renderer: Renderer2;
   isScrolled: boolean = false;
@@ -29,19 +26,22 @@ export class TopMenuComponent implements OnInit, AfterViewInit {
   menuTextIcons!: NodeListOf<Element>;
   subMenuIcons!: NodeListOf<Element>;
   subMenuTextIcons!: NodeListOf<Element>;
+  routerSubs!: Subscription;
+  themeSubs!: Subscription;
+  modalSubs!: Subscription;
 
   constructor(
     private device: DeviceService,
     private router: Router,
     private rendererFactory: RendererFactory2,
     private theme: ThemeService,
-    private dialogService: DialogService,
+    private typingTextModal: TypingTextModalService,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
   }
-
-
+  
+  
   ngOnInit(): void {
     this.userDevice = this.device.device;
     this.menuItems = [
@@ -116,13 +116,15 @@ export class TopMenuComponent implements OnInit, AfterViewInit {
         command: () => this.findRoute('contact', 'contact')
       }
     ];
-    this.theme.themeObserver.subscribe(theme => {
+    
+    this.themeSubs = this.theme.themeObserver.subscribe(theme => {
       this.currentTheme = theme;
       if (this.haveViewInited && !this.device.device.isHandset && !this.device.device.isTablet) {
         this.changeMenuItemsColor(this.isScrolled, this.currentPath, theme);
       }
     });
-    this.router.events.subscribe(event => {
+
+    this.routerSubs = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.currentPath = event.url;
         if (this.haveViewInited && !this.device.device.isHandset && !this.device.device.isTablet) {
@@ -130,6 +132,16 @@ export class TopMenuComponent implements OnInit, AfterViewInit {
         }
       }
     });
+
+    this.modalSubs = this.typingTextModal.modalObserver$
+    .subscribe(resp => this.typingTextModal.open(resp));
+
+  }
+  
+  ngOnDestroy(): void {
+    this.themeSubs.unsubscribe();
+    this.routerSubs.unsubscribe();
+    this.modalSubs.unsubscribe();
   }
 
   ngAfterViewInit(): void {
@@ -151,18 +163,6 @@ export class TopMenuComponent implements OnInit, AfterViewInit {
   findRoute(base: string, ...params: string[]) {
 
     this.router.navigate([`/${base}`, ...params])
-      .then(() => {
-        const ref: DynamicDialogRef = this.dialogService.open(TypingTextComponent, {
-          header: '¡Inspírate con esta frase filosófica!, esperamos que te guste 🤗',
-          draggable: false,
-          baseZIndex: 10000,
-          resizable: false,
-        });
-        timer(Number(environment.modalIsDysplayed) * 1000).pipe(
-          take(1)
-        ).subscribe(() => ref.close());
-
-      })
       .catch(() => this.router.navigate(['/']));
   }
 

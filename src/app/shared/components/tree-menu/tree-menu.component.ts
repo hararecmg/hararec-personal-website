@@ -1,18 +1,13 @@
-import { timer, take } from 'rxjs';
 import { Component, Renderer2, RendererFactory2, Inject, OnInit, AfterViewInit, AfterViewChecked, Output, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
 import { TreeNode } from 'primeng/api';
 import { NodeEvent } from '../../interfaces/node-event';
-import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { TypingTextComponent } from '../typing-text/typing-text.component';
-import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-tree-menu',
   templateUrl: './tree-menu.component.html',
   styleUrls: ['./tree-menu.component.scss'],
-  providers: [DialogService]
 })
 export class TreeMenuComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
@@ -23,7 +18,6 @@ export class TreeMenuComponent implements OnInit, AfterViewInit, AfterViewChecke
   constructor(
     private router: Router,
     private rendererFactory: RendererFactory2,
-    private dialogService: DialogService,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
@@ -159,25 +153,6 @@ export class TreeMenuComponent implements OnInit, AfterViewInit, AfterViewChecke
     if (event.node['data']) {
       const [base, ...params] = event.node.data;
       this.router.navigate([`/${base}`, ...params])
-        .then(() => {
-          this.onSelecting.emit(false);
-
-          if (base === 'home') {
-            return;
-          }
-
-          const ref: DynamicDialogRef = this.dialogService.open(TypingTextComponent, {
-            header: '¡Inspírate con esta frase filosófica!, esperamos que te guste 🤗',
-            draggable: false,
-            baseZIndex: 10000,
-            resizable: false,
-          });
-
-          timer(Number(environment.modalIsDysplayed) * 1000).pipe(
-            take(1)
-          ).subscribe(() => ref.close());
-          
-        })
         .catch(() => {
           this.onSelecting.emit(true);
           this.router.navigate(['/'])
