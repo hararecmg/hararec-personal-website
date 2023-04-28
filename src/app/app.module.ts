@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ApiInterceptorService } from './shared/services/interceptors/api-interceptor.service';
-import { CacheInterceptorService } from './shared/services/interceptors/cache-interceptor.service';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import localeEn from '@angular/common/locales/en';
@@ -57,11 +56,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     })
   ],
   providers: [
-    { 
-      provide: HTTP_INTERCEPTORS, 
-      useClass: CacheInterceptorService, 
-      multi: true 
-    },
     { 
       provide: HTTP_INTERCEPTORS, 
       useClass: ApiInterceptorService, 
