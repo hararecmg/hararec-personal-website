@@ -1,9 +1,7 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { take } from 'rxjs';  
+import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
-import { OpenAiService } from '../../services/global/open-ai.service';
 import { OpenAIResponse } from '../../interfaces/open-ai';
 import { DeviceService } from '../../services/global/device.service';
 import { Device } from '../../interfaces/device';
@@ -16,41 +14,17 @@ import { Device } from '../../interfaces/device';
 export class TypingTextComponent implements OnInit, AfterViewInit {
 
   private _openAiResponse!: OpenAIResponse;
-  words: string = 'Hello world!';
-  isLoading: boolean = true;
   userDevice!: Device;
 
   constructor(
-    private openAi: OpenAiService,
-    private router: Router,
     private device: DeviceService,
-  ) {}
+    private config: DynamicDialogConfig,
+  ) {
+    this._openAiResponse = this.config.data.openAiResp;
+  }
   
   ngOnInit(): void {
-
-    const urlArray = this.router.url.split('/');
-    
-    this.words = urlArray
-    .filter((valor, indice) => urlArray.indexOf(valor) === indice)
-    .slice(1).join(' ');
-
     this.userDevice = this.device.device;
-
-    this.openAi.getModerateCompletions({
-      model: 'text-davinci-003',
-      prompt: this.createPromt(this.words),
-      temperature: 0.9,
-      max_tokens: 60,
-      frequency_penalty: 0,
-      presence_penalty: 0,
-      top_p: 1,
-    }, false)
-    .pipe(take(1))
-    .subscribe(resp => {
-      this.isLoading = false;
-      this._openAiResponse = resp
-    });
-    
     gsap.registerPlugin(TextPlugin);
   }
   
@@ -86,10 +60,6 @@ export class TypingTextComponent implements OnInit, AfterViewInit {
     masterTl.add(wordTl);
   }
   
-  createPromt(words: string): string {
-    return `Reflexiona sobre la naturaleza de: "${words}" y escribe una frase filosófica sobre ello:`; 
-  }
-
   formatUnixTime(unixTime: number): string {
     const date = new Date(unixTime * 1000); // se convierte a milisegundos
     const day = date.getDate().toString().padStart(2, '0');
@@ -128,13 +98,10 @@ export class TypingTextComponent implements OnInit, AfterViewInit {
       'box-width': this.userDevice.isHandset
         ? '100%'
         : this.userDevice.isTablet
-          ? '62%'
+          ? '70%'
           : this.userDevice.isWeb
             ? '70%'
             : '100%',
-      'quote-color': this.isLoading
-        ? 'transparent'
-        : '',
     }
   }
   
@@ -145,7 +112,7 @@ export class TypingTextComponent implements OnInit, AfterViewInit {
 
     return {
       'text': this._openAiResponse.choices[0].text || 'hello world',
-      'quote': `Texto creado por '${model}' - ${date}` || '',
+      'quote': `Texto creado por '${model}' (IA) - ${date}` || '',
       'id': this._openAiResponse.id,
     }
   }
