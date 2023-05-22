@@ -44,5 +44,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
-  }
+  },
+  "repository": "https://github.com/hararecmg/hararec-website.git",
+  "author": "Hararec MG <hararecmedina@gmail.com>",
+  "license": "MIT"
 }
