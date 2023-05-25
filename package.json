@@ -4,7 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "dev": "yarn ng serve -o --port 8080",
+    "dev:docker": "yarn ng serve --port 8080",
     "build:prod": "yarn ng build --configuration production --base-href https://hararecmg.github.io/hararec-website/ --aot --build-optimizer --optimization --output-path docs/",
+    "build:nginx": "yarn ng build --configuration production --base-href / --aot --build-optimizer --optimization --output-path docs/",
+    "build:docker": "docker compose -f docker-compose.prod.yml up",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
