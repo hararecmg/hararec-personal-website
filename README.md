@@ -1,6 +1,6 @@
 [Documentación en español](#espanol) | [Documentation in English](#english)
 
-# <div id="espanol">💻 Sitio web personal v1.0.8 - HararecMG</div>
+# <div id="espanol">💻 Sitio web personal v1.1.0 - HararecMG</div>
 
 ## <div id="indice">📋 Índice</div>
 
@@ -30,7 +30,7 @@
 
 ## <div id="acerca-de-este-repositorio">📂 Acerca de este Repositorio</div>
 
-Este repositorio alberga el código fuente de mi sitio web personal, el cual usa la versión 15.2.4 de Angular, usa las librerías de diseño [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap](https://getbootstrap.com/), [Bootstrap-icons](https://icons.getbootstrap.com/) y [PrimeNg-Icons](https://primeng.org/icons), y sigue el flujo de trabajo de Gitflow. Además, utilizo la notación de [Conventional Commits](https://www.conventionalcommits.org) para mis commits, lo cual me permite mantener un control y una buena documentación del código. Este proyecto también ha sido inspirado en diseños mostrados en el canal de Youtube [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT), por lo que quiero expresar mi más sincero agradecimiento por compartir su conocimiento y por ser una fuente de inspiración para mí. Mi portafolio incluye una selección de proyectos que he realizado a lo largo de mi carrera como desarrollador. Cada uno de ellos refleja mis habilidades y mi pasión por el desarrollo de software de calidad. ¡Si quieres conocer más sobre mi trabajo o colaborar juntos, no dudes en ponerte en contacto conmigo! Estoy seguro de que juntos podemos alcanzar grandes objetivos.
+Este repositorio alberga el código fuente de mi sitio web personal, el cual usa la versión 15.2.4 de Angular con yarn, usa las librerías de diseño [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap](https://getbootstrap.com/), [Bootstrap-icons](https://icons.getbootstrap.com/), tiene las configuraciones necesarias de [Docker](https://www.docker.com/get-started/) y [PrimeNg-Icons](https://primeng.org/icons), y sigue el flujo de trabajo de Gitflow. Además, utilizo la notación de [Conventional Commits](https://www.conventionalcommits.org) para mis commits, lo cual me permite mantener un control y una buena documentación del código. Este proyecto también ha sido inspirado en diseños mostrados en el canal de Youtube [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT), por lo que quiero expresar mi más sincero agradecimiento por compartir su conocimiento y por ser una fuente de inspiración para mí. Mi portafolio incluye una selección de proyectos que he realizado a lo largo de mi carrera como desarrollador. Cada uno de ellos refleja mis habilidades y mi pasión por el desarrollo de software de calidad. ¡Si quieres conocer más sobre mi trabajo o colaborar juntos, no dudes en ponerte en contacto conmigo! Estoy seguro de que juntos podemos alcanzar grandes objetivos.
 
 <details>
   <summary>Proyectos incluidos</summary>
@@ -52,6 +52,7 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
 
   - [Git](https://git-scm.com/downloads)
   - [Node.js](https://nodejs.org/es/download/) y npm (viene incluido con la instalación de Node.js)
+  - [Yarn](https://yarnpkg.com/) un gestor de paquetes para `Node.js`
 </details>
 
 <details>
@@ -85,11 +86,13 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
   ```
   cd hararec-website
   ```
-  Luego, instala las dependencias del proyecto con npm:
+  Luego, instala las dependencias del proyecto con `yarn`:
   ```
-  npm install
+  yarn
   # o
-  npm i
+  yarn install
+  # o
+  yarn install --frozen-lockfile
   ```
   Esto descargará todas las dependencias del proyecto y las instalará en la carpeta `node_modules`.
   
@@ -104,6 +107,9 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
   - `NG_OPENAI_ORGANIZATION_ID`: el identificador de OpenAI de tu organización (obtenida de https://platform.openai.com/account/org-settings).
   - `NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED`: la cantidad de segundos que quieres que se muestre la ventana modal de 'frases filosóficas' generadas con la api de OpenAI, antes de que se cierre de forma automática.
   - `NG_PEXEL_API_KEY`: la clave de API de Pexels (obtenida de https://www.pexels.com/api/).
+  - `DOCKER_DEV_USERNAME`: El nombre de usuario para crear la imagen de Docker
+  - `DOCKER_DEV_IMAGENAME`: El nombre de deseado para crear la imagen de Docker
+  - `DOCKER_DEV_TAG`: El tag deseado para crear la imagen de Docker
 
   Para configurar estas variables de entorno en diferentes sistemas operativos, siga las instrucciones a continuación:
 
@@ -136,11 +142,9 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
   
   Una vez que hayas instalado las dependencias del proyecto, puedes ejecutar la aplicación con el siguiente comando:
   ```
-  ng serve
-  # o
-  ng serve -o
+  yarn dev
   ```
-  Esto iniciará un servidor de desarrollo local y abrirá la aplicación en tu navegador predeterminado. Cualquier cambio que realices en el código se reflejará automáticamente en el navegador.
+  Esto iniciará un servidor de desarrollo local en el puerto 8080 y abrirá la aplicación en tu navegador predeterminado. Cualquier cambio que realices en el código se reflejará automáticamente en el navegador.
   
 </details>
 
@@ -149,9 +153,20 @@ A continuación, se detallan las instrucciones para clonar y/o descargar, y ejec
   
   Para crear una versión de producción de tu aplicación, ejecuta el siguiente comando:
   ```
-  ng build --configuration production --aot
+  yarn build:prod
   ```
-  Esto creará una versión optimizada de tu aplicación en la carpeta `dist`. Puedes utilizar esta versión para implementar la aplicación en un servidor de producción. ¡Espero que disfrutes trabajando con este proyecto de Angular!
+  Esto creará una versión optimizada de tu aplicación en la carpeta `docs`. Puedes utilizar esta versión para implementar la aplicación en un servidor de producción. ¡Espero que disfrutes trabajando con este proyecto de Angular!
+  
+</details>
+
+<details>
+  <summary>Crear imagen de Docker para Producción</summary>
+  
+  Si tienes `Docker` instalado en tu equipo y el motor de `Docker` está inicializado, se puede crear de forma automátizada la aplicación en un servidor `Nginx` para producción. Solo ejecuta el siguiente comando:
+  ```
+  yarn build:docker
+  ```
+  Esto creará la imagen de la aplicación usando `Nginx` y las variables de entorno configuradas. Además correra el contenedor de la imagen en el puerto 3000
   
 </details>
 
@@ -198,7 +213,7 @@ Espero que hayas disfrutado explorando mis proyectos y que hayas encontrado algo
 <hr/>
 
 
-# <div id="english">💻 Personal website v1.0.8 - HararecMG</div>
+# <div id="english">💻 Personal website v1.1.0 - HararecMG</div>
 
 ## <div id="index">📋 Index</div>
 
@@ -227,7 +242,7 @@ Hi! I'm Hararec, a full-stack dev with experience in Javascript and Python, as w
 
 ## <div id="about-this-repository">📂 About This Repository</div>
 
-This repo holds the source code for my personal website, using Angular v15.2.4 and the design libs [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap](https://getbootstrap.com/), [Bootstrap-icons](https://icons.getbootstrap.com/), and [PrimeNg-Icons](https://primeng.org/icons). It follows the Gitflow workflow and I use [Conventional Commits](https://www.conventionalcommits.org) notation for my commits, ensuring proper code control and documentation. The project's also inspired by designs shown on the [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT) Youtube channel, and I'm grateful for their sharing of knowledge and being an inspiration. My portfolio showcases selected projects I've completed throughout my dev career, each reflecting my skills and passion for delivering quality software. If you want to learn more about my work or collaborate, don't hesitate to reach out! I'm confident we can achieve great things together.
+This repo holds the source code for my personal website, using Angular v15.2.4 with yarn, and the design libs [@angular/cdk](https://material.angular.io/cdk/), [PrimeNg](https://www.primefaces.org/primeng/), [Bootstrap](https://getbootstrap.com/), [Bootstrap-icons](https://icons.getbootstrap.com/), you have the necessary configurations of [Docker](https://www.docker.com/get-started/) and [PrimeNg-Icons](https://primeng.org/icons). It follows the Gitflow workflow and I use [Conventional Commits](https://www.conventionalcommits.org) notation for my commits, ensuring proper code control and documentation. The project's also inspired by designs shown on the [Online Tutorials](https://www.youtube.com/@OnlineTutorialsYT) Youtube channel, and I'm grateful for their sharing of knowledge and being an inspiration. My portfolio showcases selected projects I've completed throughout my dev career, each reflecting my skills and passion for delivering quality software. If you want to learn more about my work or collaborate, don't hesitate to reach out! I'm confident we can achieve great things together.
 
 <details>
   <summary>Included Projects</summary>
@@ -250,6 +265,7 @@ Below are the instructions for cloning and/or downloading and running the projec
 
   - [Git](https://git-scm.com/downloads)
   - [Node.js](https://nodejs.org/en/download/) and npm (comes included with the installation of Node.js)
+  - [Yarn](https://yarnpkg.com/) a package manager for `Node.js`
 
 </details>
 
@@ -285,12 +301,14 @@ Below are the instructions for cloning and/or downloading and running the projec
   ```
   cd hararec-website
   ```
-  Then, install the project dependencies with npm:
+  Then, install the project dependencies with `yarn`:
   
   ```
-  npm install
+  yarn
   # or
-  npm i
+  yarn install
+  # or
+  yarn install --frozen-lockfile
   ```
   This will download all the project dependencies and install them in the `node_modules` folder.
 </details>
@@ -304,6 +322,9 @@ Below are the instructions for cloning and/or downloading and running the projec
   - `NG_OPENAI_ORGANIZATION_ID`: - Your organization's OpenAI identifier (obtained from https://platform.openai.com/account/org-settings).
  - `NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED`: the number of seconds you want the 'philosophical phrases' modal window generated with the OpenAI api to display, before it closes automatically.
   - `NG_PEXEL_API_KEY`: Pexels API key (obtained from https://www.pexels.com/api/).
+  - `DOCKER_DEV_USERNAME`: The username to create the Docker image
+  - `DOCKER_DEV_IMAGENAME`: The desired name to create the Docker image
+  - `DOCKER_DEV_TAG`: The desired tag to create the Docker image
 
   To configure these environment variables on different operating systems, follow the instructions below:
 
@@ -337,11 +358,9 @@ Below are the instructions for cloning and/or downloading and running the projec
   Once you have installed the project dependencies, you can run the application with the following command:
 
   ```
-  ng serve
-  # or
-  ng serve -o
+  yarn dev
   ```
-  This will start a local development server and open the application in your default browser. Any changes you make to the code will be automatically reflected in the browser.
+  This will start a local development server on port 8080 and open the application in your default browser. Any changes you make to the code will be automatically reflected in the browser.
 </details>
 
 <details>
@@ -350,10 +369,21 @@ Below are the instructions for cloning and/or downloading and running the projec
   To create a production version of your application, run the following command:
 
   ```
-  ng build --configuration production --aot
+  yarn build:prod
   ```
-  This will create an optimized version of your application in the `dist` folder. The build artifacts will be stored in the `dist` directory.
+  This will create an optimized version of your application in the `docs` folder. The build artifacts will be stored in the `docs` directory.
 
+</details>
+
+<details>
+  <summary>Build Docker Image for Production</summary>
+  
+  If you have `Docker` installed on your computer and the `Docker` engine is initialized, the application can be built automatically on a `Nginx` server for production. Just run the following command:
+  ```
+  yarn build:docker
+  ```
+  This will create the application image using `Nginx` and the configured environment variables. It will also run the image container on port 3000
+  
 </details>
 
 <hr/>
