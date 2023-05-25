@@ -27,18 +27,18 @@ jobs:
           echo "NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED=${{ secrets.NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED }}" >> $GITHUB_ENV
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install --frozen-lockfile
 
       # - name: Run tests
       #   run: npm run test:headless
 
       - name: Build
-        run: npm run build:prod
+        run: yarn build:prod
 
       - name: Deploy
         if: success()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: dist/hararec-portfolio
+          publish_dir: docs
           enable_jekyll: true
