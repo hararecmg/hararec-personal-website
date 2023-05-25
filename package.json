@@ -4,7 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:prod": "ng build --configuration production --base-href https://hararecmg.github.io/hararec-website/",
+    "dev": "yarn ng serve -o --port 8080",
+    "dev:docker": "yarn ng serve --port 8080",
+    "build:prod": "yarn ng build --configuration production --base-href https://hararecmg.github.io/hararec-website/ --aot --build-optimizer --optimization --output-path docs/",
+    "build:nginx": "yarn ng build --configuration production --base-href / --aot --build-optimizer --optimization --output-path docs/",
+    "build:docker": "docker compose -f docker-compose.prod.yml up",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -44,5 +48,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
-  }
+  },
+  "repository": "https://github.com/hararecmg/hararec-website.git",
+  "author": "Hararec MG <hararecmedina@gmail.com>",
+  "license": "MIT"
 }

@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      target: production
+      dockerfile: Dockerfile
+    restart: always
+    image: ${DOCKER_DEV_USERNAME}/${DOCKER_DEV_IMAGENAME}:${DOCKER_DEV_TAG}
+    container_name: angular-app
+    env_file:
+      - .env 
+    ports:
+      - 3000:80
+    environment:
+      NG_OPENAI_API_KEY: ${NG_OPENAI_API_KEY}
+      NG_OPENAI_ORGANIZATION_ID: ${NG_OPENAI_ORGANIZATION_ID}
+      NG_PEXEL_API_KEY: ${NG_PEXEL_API_KEY}
+      NG_FORMSPREE_ID: ${NG_FORMSPREE_ID}
+      NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED: ${NG_SECONDS_IN_WHICH_MODAL_SALE_IS_DISPLAYED}
