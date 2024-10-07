@@ -10,25 +10,25 @@ export class SocialMediaLinkComponent {
 
   links: SocialMedia[] = [
     {
-      url: 'https://github.com/hararecmg',
+      url: 'https://github.com/hararec-dev',
       tooltip: 'github',
       icon: 'bi bi-github',
       button_class: 'p-button-success'
     },
     {
-      url: 'https://www.linkedin.com/in/hararec-medina-gonzález',
+      url: 'https://www.linkedin.com/in/hararec-dev',
       tooltip: 'linkedin',
       icon: 'bi bi-linkedin',
       button_class: 'p-button-warning'
     },
     {
-      url: 'https://www.twitter.com/HararecMG',
+      url: 'https://www.twitter.com/hararec_dev',
       tooltip: 'twitter',
       icon: 'bi bi-twitter',
       button_class: 'p-button-info'
     },
     {
-      url: 'https://www.facebook.com/hararec.medinagonzalez?mibextid=ZbWKwL',
+      url: 'https://www.facebook.com/hararec.medinagonzalez',
       tooltip: 'facebook',
       icon: 'bi bi-facebook',
       button_class: ''
